@@ -1,0 +1,626 @@
+<?php session_start();
+$_SESSION['phivanchuyen']=0;
+$_SESSION['thanhtien']=$this->cart->total();
+$_SESSION['tongtientam1']=$this->cart->total();
+//echo $_SESSION['tongtientam1'];
+?>
+<link rel="stylesheet" href="<?php echo base_url();?>css/11.css" type="text/css" media="screen" title="default" />
+
+<script>
+
+
+$(document).ready(
+            function() {
+                $("#giohang").css("display","block");
+				$("#cartgiohang").css("display","none");				
+				$("#popupdathang").css("display","none");
+				$("#step_two_body").height($(".order_product").height());
+				
+                 $("#soluong").change(function(){
+				 a = $("#soluong").val();
+				 b = <?php foreach($info2 as $key) echo $key['price'];?>;
+				 c = $("#tinhthanh").val();
+	$("#txtHint1").load('<?php echo base_url();?>index.php/ajax/ajax_level4/?soluong='+a+'&'+'dongia='+b+'&'+'vanchuyen='+c);
+	
+});   
+
+$("#tinhthanh").change(function(){
+				 a = $("#soluong").val();
+				 b = <?php foreach($info2 as $key) echo $key['price'];?>;
+				 c = $("#tinhthanh").val();
+	$("#txtHint4").load('<?php echo base_url();?>index.php/ajax/ajax_level8/?vanchuyen='+c);
+	$("#txtHint1").load('<?php echo base_url();?>index.php/ajax/ajax_level4/?soluong='+a+'&'+'dongia='+b+'&'+'vanchuyen='+c);
+	
+});   
+ 
+$("#thaydoithongtin").click(function(){
+	$("#step_three").addClass("anthanhtoan");			 
+	
+	
+});  
+
+$("#giohang").click(function(){
+	$("#giohang").css("display","block");			 
+	
+	
+});
+
+
+	
+
+                
+            });
+
+</script>
+
+
+
+<script>
+function showUser() {
+	var giatri1 = document.getElementById('soluong').value;
+	var giatri2 = document.getElementById('iddong').value;
+	var p1="soluong="+giatri1;
+	var p2="iddong="+giatri2;
+	var p=p1+"&"+p2;
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level3/',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(p);
+}
+
+
+</script>
+
+<script>
+function laytinhthanh() {
+	var giatri1 = document.getElementById('tinhthanh').value;
+	
+	var p1="tinhthanh="+giatri1;
+	
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint2").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level6/',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(p1);
+}
+
+
+</script>
+
+<script>
+function layphuongxa() {
+	var giatri1 = document.getElementById('quanhuyen').value;
+	
+	var p1="quanhuyen="+giatri1;
+	
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint3").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level7/',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(p1);
+}
+
+
+</script>
+
+<script>
+function showUser1() {
+	var giatri1 = document.getElementById('soluong').value;
+	var giatri2 = document.getElementById('iddong').value;
+	var p1="soluong="+giatri1;
+	var p2="iddong="+giatri2;
+	var z=p1+"&"+p2;
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("chinhsua").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level5',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(z);
+}
+
+
+</script>
+
+
+
+	
+
+	
+<div class="margin">
+<div class="content-helper clear"> 
+
+<div class="detail-breadcrumb">
+<div class="detail-breadcrumb-inner">
+<div class="row">
+<div class="span6">
+<div class="breadcrumbs breadcrumb">
+
+</div>
+</div>
+<div class="span6" style="margin-top:-px;">
+<div class="yahoo" style="float: right; margin-left: 10px; ">
+<a href="ymsgr:sendim?hnghiakhoi" style="color: #333;"><img class="yahoo-icon" src="images/online-yahoo.gif" org-src="http://opi.yahoo.com/online?u=hnghiakhoi&t=5" alt="" style="vertical-align: -1px;margin-right: 4px;">Hỗ trợ 1</a>
+<a href="ymsgr:sendim?hnghiakhoi" style="padding-left: 7px;color: #000;"><img class="yahoo-icon" src="images/online-yahoo.gif" org-src="http://opi.yahoo.com/online?u=hnghiakhoi&t=5" alt="" style="vertical-align: -1px;margin-right: 4px;">Hỗ trợ 2</a>
+</div>
+<div class="phone">
+<strong>08 668 39296</strong>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<h1 class="mainbox-title"><span><span class="secure-page-title"><a name="p1"></a>Thanh toán</span></span></h1>   
+<div class="central-column" style="width:100%; max-width:996px">        
+<div class="central-content">
+<div class="cm-notification-container"></div>
+<div class="mainbox-container" style="margin-top:200px;">
+
+<div class="mainbox-body">
+
+<div class="disable-menu-top">&nbsp;</div>
+
+					
+<div id="giohang" class="modalDialog" style="border-color: rgba(0,0,0,0.8);color:white;">
+
+<form action="<?php echo base_url();?>cgiohangno/update" method="post" />
+
+<table width="759" height="146" class="  table-bordered" style="position:relative;border:1px solid white;margin:auto;box-shadow:5px 5px 5px red;">
+
+<tr></tr>
+<thead>
+  <tr style="border:1px solid white;">
+    <td style="border:1px solid white;" width="47">TT</td>
+    <td style="border:1px solid white;" width="50">Số lượng</td>
+    <td style="border:1px solid white;" width="194">Sản phẩm</td>
+
+	<td style="border:1px solid white;" width="186" style="text-align:center">Mẫu</td>
+	<td style="border:1px solid white;" width="50" style="text-align:center">Size</td>
+    <td style="border:1px solid white;" width="83" style="text-align:center">Tùy chọn <a href="#close" style="color:Red;" title="Tắt" class="close">Tắt</a> <a href="<?php echo base_url();?>cgiohangno/xoasach" style="color: Red;font-size: 20px;height: 55px;position: absolute; right: -110px;top: 50px;width: 110px;" title="Xóa sạch giỏ hàng" class="close">Xóa sạch giỏ hàng</a></td>
+  </tr>
+</thead>
+<?php $i = 1; ?>
+<?php foreach ($info2 as $items){?>
+
+<script>
+
+
+$(document).ready(
+            function() {
+                
+				
+
+
+	
+$( ".chon<?php echo $i;?>" ).on({
+click: function() {
+$( '.test<?php echo $i;?>' ).removeClass( "dobong" );
+$( this ).toggleClass( "dobong" );
+}
+});
+                
+            });
+
+</script>
+
+<input type='hidden' name='<?php echo $i."[rowid]" ?>' value="<?php echo $items['rowid']?>" />
+<input type='hidden' name="<?php echo $i."[options][mauchon]"; ?>" value="<?php echo $items['options']['mauchon'];?>" />
+<input type='hidden' name="<?php echo $i."[options][sizechon]"; ?>" value="<?php echo $items['options']['sizechon'];?>" />
+
+<tr style="border:1px solid white;">
+  <td style="border:1px solid white;" height="49"><?php echo $i; ?></td>
+  <td style="border:1px solid white;"><input style="width: 22px" type='text' name="<?php echo $i.'[qty]'?>" value="<?php echo $items['qty']; ?>" maxlength="3" /></td>
+  <td style="border:1px solid white;"><?php echo $items['name']; ?></td>
+  <td style="text-align:right;border:1px solid white;">
+  
+  <span style="display:block;">
+
+
+<?php $mau=explode("|", $items['mau']); 
+	for($j=0;$j<count($mau);$j++)
+	{
+	$mauchontam=$items['options']['mauchon'];
+	if($mauchontam==$mau[$j])
+	{
+	?>
+	
+	<label style="float:left;width:58px;margin-right:10px;height:53px;margin-bottom:10px;" class="chon<?php echo $i;?> test<?php echo $i;?> dobong">
+
+<span class="label" style="background-image:url('./uploads/<?php echo $mau[$j];?>');width:50px;height:50px;background-size:cover;"><input checked="true" style="display:none;" type="radio" value="<?php echo $mau[$j];?>" name="<?php echo $i."[options][mauchon]"; ?>" id="mau<?php echo $i;?>"> </span>
+</label>
+	
+	<?php }else{
+	
+	if($mau[$j]!=null)
+	{
+?>
+<label style="float:left;width:58px;margin-right:10px;height:53px;margin-bottom:10px;" class="chon<?php echo $i;?> test<?php echo $i;?> ">
+
+<span class="label" style="background-image:url('./uploads/<?php echo $mau[$j];?>');width:50px;height:50px;background-size:cover;"><input style="display:none;" type="radio" value="<?php echo $mau[$j];?>" name="<?php echo $i."[options][mauchon]"; ?>" id="mau<?php echo $i;?>"> </span>
+</label>
+<?php }else break;}}?>
+
+</span>
+  
+  </td>
+  <td style="text-align:right;border:1px solid white;">
+  
+  <select  name="<?php echo $i."[options][sizechon]"; ?>" id="size<?php echo $i;?>" style="font-size: 16px; padding: 4px 8px;" class="change_quantity" rel="1159000">
+<?php  $size=explode(",", $items['size']); 
+	for($k=0;$k<count($size);$k++)
+	{
+	$sizechontam=$items['options']['sizechon'];
+	if($sizechontam==$size[$k])
+	{
+?>
+
+<option selected="selected" value="<?php echo $size[$k];?>"><?php echo $size[$k];?></option>
+
+<?php
+		
+	}
+	else
+	{
+	if($size[$k]!=null)
+	{
+?>
+<option value="<?php echo $size[$k];?>"><?php echo $size[$k];?></option>
+
+<?php }else break;}}?>
+</select>
+  
+  </td>
+  <td style="text-align:center;border:1px solid white;"><a class="btn btn-danger" href="<?php echo base_url()."cgiohangno/del/".$items['rowid'];?>">Hủy</a></td>
+</tr>
+<?php 
+					$i++; }?>
+<tr >
+<td colspan="8">
+<input style="" type='submit' class="btn btn-warning" value='Cập nhật' /> <span style="color:red;"><b><--- Vui lòng nhấn nút "Cập nhật" sau khi chỉnh sửa xong giỏ hàng</b></span>
+<a style="float:left;" class="btn btn-warning" href="<?php echo base_url();?>">Tiếp tục mua hàng</a>
+<div style="clear:both;"></div>
+<a href="<?php echo base_url();?>cgiohangno/xoasach" style="float:left;" title="Xóa sạch giỏ hàng" class="btn btn-danger">Xóa sạch giỏ hàng</a>
+
+<div style="clear:both;"></div>
+<a href="#close" style="float:left;" title="Tắt" class="btn btn-warning">Tắt</a>
+
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+<form class="cm-ajax cm-ajax-force"  action="" method="post">
+<div class="checkout-steps clear cm-save-fields" id="checkout_steps">
+<div style="border: 1px solid #DDDDDD; margin-left:-12px; float:left; width:103%; " class="bg_step_row_first "  id="step_one">											
+<div class="per_step_row2 float-left">
+<h2 class="step-title">
+<span class="float-left">1.</span>
+<span>Deal có trong Đơn hàng <a style="position:absolute;margin-top:-10px;margin-left:10px;border:1px solid green;background-color:white;border-radius:5px;text-decoration:none;"  title="Sửa giỏ hàng" href ="#giohang">&nbsp;&nbsp;&nbsp;Sửa<br> giỏ hàng</a></span> 
+</h2>
+<div  class="">
+<div class="clear">
+<div class="order_product float-left">
+
+<?php //print_r($info2);?>
+<?php $dem=0; foreach ($info2 as $items){?>
+<div>
+<div class="cart_product_item" style="padding-bottom:0px;">
+<span style="font-size:20px"><?php $dem++;echo $dem;?>/</span>
+<div class="float-left product_thumb">
+<?php  if($items['options']['mauchon']!=""){ ?>
+<img  src="<?php echo base_url();?>uploads/<?php echo $items['options']['mauchon'];?>" width="126" height="126" alt="<?php echo $items['name'];?>"  border="0" />								
+<?php }else
+		{
+?>
+<img  src="<?php echo base_url();?>uploads/<?php echo $items['hinhanh'];?>" width="126" height="126" alt="<?php echo $items['name'];?>"  border="0" />								
+
+<?php }?>
+</div>
+<div class="order_product_shortname float-left">
+<table width="100%" height="126px" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<a class="product-title"><?php echo $items['name'];?><br/><br/><span style="color:green;">Mã số:</span> <?php echo $items['masp'];?>
+<br/><br/><span style="color:green;">Size:</span> <?php echo $items['options']['sizechon'];?>
+<br/><br/><span style="color:green;">Trọng lượng:</span> <br/><?php echo $items['options']['wei'];?>gr
+ x 
+<?php echo $items['qty'];?>
+
+ = 
+ <?php $_SESSION['tongtientamgr']=$items['trongluong']*$items['qty']; echo $_SESSION['tongtientamgr'];?>gr
+ 
+ <br/><br/><span style="color:green;">Thành tiền:</span> <br/><?php echo number_format($items['price'],"0",",",".");?>
+ x 
+<?php echo $items['qty'];?>
+
+ = 
+ <?php $_SESSION['tongtientam']=$items['subtotal']; echo number_format($_SESSION['tongtientam'],"0",",",".");?>&nbsp;VNĐ
+ 
+ </a>
+</td>
+</tr>
+</table>					
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div style="margin-bottom: 20px;display: inline-block;"></div>
+<div class="clear"></div>	
+<?php }?>	
+</div>	                
+</div>
+</div>	</div>
+
+ 
+
+<div class="per_step_row2" id="step_two">
+<h2 class="step-title">
+<span class="float-left">2.</span>
+<img src="<?php base_url();?>images/icon_step_close.gif" width="19" height="17" border="0" alt="" class="float-right" />
+<span>Địa chỉ giao hàng</span>
+</h2>
+
+<div id="chinhsua">
+<div id="step_two_body" class="step-body-active cm-skip-save-fields" style="border-right:1px solid #dddddd;border-left:1px solid #dddddd; box-shadow: 1px 1px 10px; min-height:450px; height:auto;">
+	
+<div>
+
+<div class="clear">
+<div class="input_info_privite"> Vui lòng nhập thông tin của bạn </div>
+<div class="float-left">
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required " >Họ tên:</label>
+<input id="elm_30" class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_30');" value="" size="32" name="hoten" placeholder="Họ tên">
+</div>
+
+
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required  cm-location-shipping" >Tỉnh/Thành:</label>
+
+<select id="tinhthanh" style="min-width:200px" name="tinhthanh" onchange="laytinhthanh(this.value)">
+<option value="">- Chọn Tỉnh/Thành -</option>
+<?php foreach($tinhthanh as $tinhthanh1){ ?>
+<option value="<?php echo $tinhthanh1['provinceid'];?>"><?php echo $tinhthanh1['provincename'];?></option>
+<?php }?>
+</select>
+</div>
+
+<div id="txtHint2">
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required  cm-location-shipping" >Quận/Huyện:</label>
+
+<select id="quanhuyen" style="min-width:200px" name="quanhuyen" onchange="layphuongxa(this.value)">
+<option value="">- Chọn Quận/Huyện -</option>
+
+</select>
+</div>
+<div id="txtHint3">
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required  cm-location-shipping" >Phường/Xã:</label>
+
+<select id="phuongxa" style="min-width:200px" name="phuongxa">
+<option value="">- Chọn Phường/Xã -</option>
+
+</select>
+</div>	
+</div>
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field " >Số nhà:</label>
+<input id="elm_32"  class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_32');" value="" size="32" name="sonha" placeholder="Số nhà">
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field " >Đường:</label>
+<input id="elm_33"  class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_33');" value="" size="32" name="duong" placeholder="Đường">
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required " for="elm_31">Điện thoại:</label>
+<input id="elm_31" onKeyPress="return isNumberKey(event)" class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_31');" value="" size="32" name="dienthoai" placeholder="Điện thoại">
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+<!--step_two--></div>
+
+
+<div class="order_shipping_method float-left per_step_row" style="margin-left:18px;">
+<h2 class="step-title">
+<span class="float-left">3.</span>
+<span class="title"
+>Thanh toán và vận chuyển</span>
+</h2>
+<div class="per_step_row_body ">
+<label></label>
+<label class="title_select_method">Hình thức giao hàng</label>
+<div   id="txtHint4">
+<div class="overflow-hidden " id="shipping_rates_list">
+<input type="radio" class="valign" name="shipping_ids[]" value="11" id="sh_11" checked="checked"  />
+<label style="width:221px;" id="shipping_method_11_label" for="sh_11" class="valign strong">Chuyển phát nhanh từ TPHCM với giá <?php echo "0"; ?> VNĐ
+<br>
+
+
+<span class="valign strong" style="color:white;"><b>Thời gian vận chuyển: <br><span style="color:yellow;">0</span></b></span><br>
+<span class="valign strong" style="color:white;"><b>Tổng trọng lượng: <br><span style="color:yellow;"><?php echo $gram;?> gram</span></b></span>
+
+</label>
+<!--shipping_rates_list--></div>
+</div>
+<div class="bottom_line_methods" style="margin-left:-6px;">&nbsp;</div>		
+<label></label>
+<label class="title_select_method method_power_by_onpay">
+<span class="float-left">Hình thức thanh toán</span>
+<span class="power_by_onepay"></span>
+</label>
+<div class="clear-both"></div>
+<div id="payments_summary">
+<table cellpadding="0" cellspacing="0" border="0" id="list_payment_methods" width="100%">
+<tr>
+<td>
+<input type="radio" id="payment_method_13" 										   class="radio" onclick="jQuery.ajaxRequest('/index.php?dispatch=checkout.order_info&amp;payment_id=13', {method: 'POST', cache: false, result_ids: 'checkout_steps'});" 
+name="payment_id" value="13" 
+checked="checked"
+/>
+</td>
+<td>
+<label id="payment_method_6_label" for="payment_method_13"  class="strong 6 6">Thanh toán tiền mặt (miễn phí)</label></td>
+<td>&nbsp;</td>
+<td></td>
+</tr>
+
+
+</table>
+<!--payments_summary--></div>
+
+
+
+
+	    		
+</div>
+</div>
+	
+
+<div id="step_three" class="checkout_comment_and_place_order " style="width:991px;">    
+<div class="clear bg_step_row_bottom_nd"></div>
+<div id="step_three_body" class="">
+<div class="clear">
+
+<input type="hidden" name="update_step" value="step_three"/>
+<input type="hidden" name="next_step" value="step_four"/>
+<input type="hidden" name="result_ids" value="checkout_steps,checkout_cart"/>
+<div class="buttons-container hidden">
+<span id="wrap_step_three_but"  class="button-submit"><input id="step_three_but"  type="submit" name="dispatch[checkout.update_steps]"  value="Tiếp tục" /></span>
+</div>
+
+<div class="clear" style="margin-top: 10px;"></div>
+<div class="pay_comment_info pay_comment_info_tmp">
+
+<div class="clear">
+<p style="clear:both">Nếu bạn có thông tin cần Deal Hàng Việt lưu ý, xin hãy nhập nó vào đây:</p>
+<textarea class="customer-notes" name="ghichu"  style="min-height:15px;"></textarea>
+</div>
+<div class="buttons-container right clear-both" style="display: none">						
+<span id="wrap_place_order" class="button-submit">
+<input id="place_order" class="order-place-disabled" type="button" name="dispatch[checkout.place_order]" value="Đặt hàng" disabled="" />
+</span>
+</div>
+
+</div>
+
+<div id="txtHint1">
+<div class="order_total_info canhchinhle">	    
+<div class="clear">
+<ul class="order_total_info_nd" style="">
+<li class="subtotal">
+<label>Thành tiền:</label>
+
+<span style="margin-top:-14px;"><?php $_SESSION['tongtientam']=$this->cart->total(); echo number_format($_SESSION['tongtientam'],"0",",",".");?>&nbsp;VNĐ</span>
+</li>
+<li id="payment_shipping_fee_line">
+<input type="hidden" name="phivanchuyen" value="<?php echo $tienship; ?>"  />
+
+<label title="" class="">Phí vận chuyển:</label>
+<span style="margin-top:-14px;"><?php if($tienship!=0) echo number_format(0,"0",",",".")."&nbsp;VNĐ"; else echo "Miễn phí giao hàng"; ?></span>
+</li>
+<li class="total" style="border-top:1px solid #dddddd;">
+<label style="padding-top:5px; margin-top:5px;">Tổng số tiền:</label>
+<input type="hidden" name="tongtientam1" value="<?php echo $_SESSION['tongtientam1'];?>" />
+<span style="margin-top:-20px; color:#ed1b24 !important; padding-top:5px; font-size:22px; font-weight:bold;"><?php  echo number_format($_SESSION['tongtientam1'],"0",",",".");?>&nbsp;VNĐ</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="clear-both right btn_place_order_submit">
+
+<span id="wrap_place_order" class="button-submit btn_place_order_2" style="float: right;">
+<input type="submit" name="ok" value="Đặt hàng" >
+</span>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<!--step_three--></div>		
+
+</form>
+
+</div>
+<!--step_one--></div>	
+
+<!--checkout_steps--></div>
+									
+<div class="clear"></div>
+	
+<!--checkout_steps--></div>
+
+</div>
+</div>  
+</div>
+</div> 
+
+
+
+	

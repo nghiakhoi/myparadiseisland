@@ -1,0 +1,456 @@
+<?php session_start();
+$_SESSION['phivanchuyen']=0;
+$_SESSION['thanhtien']=$this->cart->total();
+$_SESSION['tongtientam1']=$this->cart->total();
+//echo $_SESSION['tongtientam1'];
+?>
+<form action="" method="post">
+<div class="main">
+<script>
+
+
+$(document).ready(
+            function() {
+$("body").removeClass("cm-index-index"); 
+$("body").removeClass("c-index"); 
+$("body").removeClass("m-index");               
+$("body").addClass("c-checkout");	
+$("body").addClass("m-cart");
+$("body").addClass("cm-checkout-cart");
+$('.product-description img').removeAttr('style');     
+$("#cartgiohang").css("display","none");	
+
+
+$("#tinhthanh").change(function(){
+				 a = $("#soluong").val();
+				 b = <?php foreach($info2 as $key) echo $key['price'];?>;
+				 c = $("#tinhthanh").val();
+	$("#txtHint4").load('<?php echo base_url();?>index.php/ajax/ajax_level8a/?vanchuyen='+c);
+	$("#txtHint5").load('<?php echo base_url();?>index.php/ajax/ajax_level4a/?soluong='+a+'&'+'dongia='+b+'&'+'vanchuyen='+c);
+	
+});
+
+
+
+$(".refresh").bind('change', function(){ 
+				
+				
+				b=$(this).attr("name");
+				d=$(this).attr("maso");
+				a=$(this).val();
+				
+				
+				
+				$.ajax({
+	  
+	  
+		type : "post",
+         url: "<?php echo base_url();?>index.php/ajax/ajax_level13/",
+         data : { 
+		 soluong : a,
+		 iddong : b,
+		 id : d,
+                    },
+         success: function(result){
+		 
+		 $('#txtHint'+b).fadeOut(100).html(result).fadeIn(500);
+		
+		$.ajax({
+		
+	  
+		type : "post",
+         url: "<?php echo base_url();?>index.php/ajax/ajax_level13a/",
+         data : { 
+		 soluong : a,
+		 iddong : b,
+		 id : d,
+                    },
+         success: function(result){
+		 
+		 
+		$('#txtHint1'+b).fadeOut(100).html(result).fadeIn(500);
+
+				a1 = $("#soluong").val();
+				 b1 = <?php foreach($info2 as $key) echo $key['price'];?>;
+				 c1 = $("#tinhthanh").val();		
+		  
+		   $.ajax({
+		
+	  
+		type : "get",
+         url: "<?php echo base_url();?>index.php/ajax/ajax_level8a/",
+         data : { 
+		 vanchuyen : $("#tinhthanh").val(),
+		 
+                    },
+         success: function(result){
+		 
+		 
+		$('#txtHint4').fadeOut(100).html(result).fadeIn(500);
+		   
+		   $.ajax({
+		
+	  
+		type : "get",
+         url: "<?php echo base_url();?>index.php/ajax/ajax_level4a/",
+         data : { 
+		 vanchuyen : $("#tinhthanh").val(),
+		 soluong : a1,
+		 dongia: b1,
+                    },
+         success: function(result){
+		 
+		 
+		$('#txtHint5').fadeOut(100).html(result).fadeIn(500);
+		   
+         }
+      });
+		   
+         }
+      });
+		   
+         }
+      });
+		   
+         }
+      });
+	  
+	  
+	  
+	  
+			});
+
+
+		  
+                
+            });
+			
+	
+
+</script>
+
+<script>
+function laytinhthanh() {
+	var giatri1 = document.getElementById('tinhthanh').value;
+	
+	var p1="tinhthanh="+giatri1;
+	
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint2").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level6/',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(p1);
+}
+
+
+</script>
+
+<script>
+function layphuongxa() {
+	var giatri1 = document.getElementById('quanhuyen').value;
+	
+	var p1="quanhuyen="+giatri1;
+	
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint3").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("POST",'<?php echo base_url();?>index.php/ajax/ajax_level7/',true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(p1);
+}
+
+
+</script>
+					
+
+<div class="cm-notification-container"></div>
+  
+					<div class="mainbox-container">
+						<div class="mainbox-body">
+			<div class="main_content" style="padding-top:0;">
+	    <ul class="step-count">
+        <li class="active"><span>1. Đơn hàng</span></li>
+        <li><span>2. Thanh toán</span></li>
+        <li><span>3. Hoàn tất</span></li>
+    </ul>
+    <div class="cb"></div>
+
+    
+        
+        <div class="box1 font14">
+            <div class="box_cart_content" style="padding-bottom: 6px !important;margin-top:10px;">
+                <label>Thông tin đơn hàng</label>
+				 <label onclick="goBack()" style="cursor:pointer;float:right; color:red;margin-right:10px;text-shadow:1px 1px 1px black;">Quay lại mua tiếp</label>
+				 <script>
+				function goBack() {
+					window.history.back();
+				}
+				</script>
+            </div>
+<?php $i = 1; ?>
+<?php foreach ($info2 as $items){?>
+<div class="box_cart_content1 bor_top justify" style="padding-bottom: 5px !important;">
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<div class="cart-p-thumb">
+<?php  if($items['options']['mauchon']!=""){ ?>
+<img  class="  "  src="<?php echo base_url();?>uploads/<?php echo $items['options']['mauchon'];?>" width="50" height="50" alt="<?php echo $items['name'];?>"  border="0" />																	</div>
+<?php }else
+		{
+?>
+<img  class="  "  src="<?php echo base_url();?>uploads/<?php echo $items['options']['mauchon'];?>" width="50" height="50" alt="<?php echo $items['name'];?>"  border="0" />																	</div>
+<?php }?>
+</td>
+<td>
+<div class="cart-p-title">
+<a href="javascript:;"><?php echo $items['name'];?><br/>Size: <?php echo $items['options']['sizechon'];?></a>
+</div><a style="background-color: #da4f49;
+    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);" href="<?php echo base_url()."cgiohangnomobile/del/".$items['rowid'];?>">Xóa</a>
+</td>
+</tr>
+</table>                
+<div class="cb"></div>
+</div>    
+<div class="box_cart_content1 bor_top">
+<div class="col">Giá bán</div>
+<div class="cor">
+<?php echo number_format($items['price'],"0",",",".");?> VNĐ
+</div>
+<div class="cb"></div>
+</div>
+
+
+
+<div class="box_cart_content1 bor_top">
+<div class="col p3t">Số lượng</div>
+<div class="cor">
+<input id="iddong<?php echo $items['rowid']?>" type="hidden" value="<?php echo $items['rowid']?>" name="1[rowid]">
+<input  id="id<?php echo $items['rowid']?>" type="hidden" value="<?php echo $items['id']?>" name="id<?php echo $items['rowid']?>">
+<select class="refresh" id="soluong<?php echo $items['rowid']?>"  name="<?php echo $items['rowid']?>" maso="<?php echo $items['id']?>">
+<?php for($j=1;$j<=10;$j++)
+		{
+?>
+<option value="<?php echo $j;?>" <?php if($items['qty']==$j) echo 'selected="selected"';?>><?php echo $j;?></option>
+
+<?php }?>
+</select>
+</div>
+<div class="cb"></div>
+</div>	
+<div class="box_cart_content1 bor_top">
+<div class="col">Trọng lượng</div>
+<div class="cor">
+<div id="txtHint1<?php echo $items['rowid']?>" >
+<?php echo $items['options']['wei'];?>gr
+ x 
+<?php echo $items['qty'];?>
+
+ = 
+ <?php $_SESSION['tongtientamgr']=$items['trongluong']*$items['qty']; echo $_SESSION['tongtientamgr'];?>gr
+</div>
+</div>
+<div class="cb"></div>
+</div>
+<div class="box_cart_content1 bor_top box_cart_content_total">
+<div class="col">Thành tiền</div>
+<div class="cor">
+<div id="txtHint<?php echo $items['rowid']?>" >
+<span class="price">
+
+ <?php $_SESSION['tongtientam']=$items['subtotal']; echo number_format($_SESSION['tongtientam'],"0",",",".");?>&nbsp;VNĐ
+
+</span>		
+</div>
+</div>
+<div class="cb"></div>
+</div>
+
+<?php 
+					$i++; }?>
+   
+ <div class="box1 font14 " id="step_two">
+  <a >
+        <div class="box_cart_content text_bo">
+            <h1>Địa chỉ giao hàng</h1>
+        </div>
+   </a>
+   
+<div class="bor_top">
+
+<div class="box_form_regist">
+
+
+<div id="ba">
+
+
+
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required " >Họ tên:</label>
+<input id="elm_30" class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_30');" value="" size="32" name="hoten" placeholder="Họ tên">
+</div>
+<div class="form-field">						
+<label  class="cm-profile-field hidden cm-required cm-location-shipping">Tỉnh/Thành phố:</label>
+<select id="tinhthanh" style="min-width:200px" name="tinhthanh" onchange="laytinhthanh(this.value)">
+<option value="">- Chọn Tỉnh/Thành -</option>
+<?php foreach($tinhthanh as $tinhthanh1){ ?>
+<option value="<?php echo $tinhthanh1['provinceid'];?>"><?php echo $tinhthanh1['provincename'];?></option>
+<?php }?>
+</select>
+</div>
+
+<div id="txtHint2">
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required  cm-location-shipping" >Quận/Huyện:</label>
+
+<select id="quanhuyen" style="min-width:200px" name="quanhuyen" onchange="layphuongxa(this.value)">
+<option value="">- Chọn Quận/Huyện -</option>
+
+</select>
+</div>
+<div id="txtHint3">
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required  cm-location-shipping" >Phường/Xã:</label>
+
+<select id="phuongxa" style="min-width:200px" name="phuongxa">
+<option value="">- Chọn Phường/Xã -</option>
+
+</select>
+</div>	
+</div>
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field " >Số nhà:</label>
+<input id="elm_32"  class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_32');" value="" size="32" name="sonha" placeholder="Số nhà">
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field " >Đường:</label>
+<input id="elm_33"  class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_33');" value="" size="32" name="duong" placeholder="Đường">
+</div>
+
+<div class="form-field">
+<label class="hidden cm-profile-field cm-required " for="elm_31">Điện thoại:</label>
+<input id="elm_31" onKeyPress="return isNumberKey(event)" class="input-text cm-skip-avail-switch" type="text" onblur="clear_space('elm_31');" value="" size="32" name="dienthoai" placeholder="Điện thoại">
+</div>
+
+</div>
+
+</div>
+
+</div> 
+        </div>
+		
+<div class="box1 font14 " id="step_three">
+<a >
+<div class="box_cart_content text_bo">
+<h1>Thanh toán và vận chuyển</h1>
+</div>
+</a>
+<div class="box_cart_content1 bor_top">
+
+<input type="hidden" name="update_step" value="step_three" />
+<input type="hidden" name="next_step" value="step_four" />
+<input type="hidden" name="result_ids" value="checkout_steps,checkout_cart" />
+
+<ul>
+
+
+<li class="co-weight" id="txtHint4">Trọng lượng cả đơn hàng: <strong><?php echo $gram;?> gram</strong></li><br />
+							
+<br class="cb" />
+
+<br class="cb" />
+
+</ul>
+
+
+</div>
+<div class="cb"></div>
+
+</div>
+
+<div class="box1 font14" id="step_four">
+<div id="txtHint5" >
+<div class="box_cart_content1">
+<div id="step_four_body" class="step-body-active ">
+<div class="clear">		
+
+<ul>
+<li class="w45">Thành tiền:</li>
+<li class="text_bo"><?php $_SESSION['tongtientam']=$this->cart->total(); echo number_format($_SESSION['tongtientam'],"0",",",".");?>&nbsp;VNĐ</li><br />
+
+<li class="w45">Phí vận chuyển:</li>
+<li class="text_bo">
+<input type="hidden" name="phivanchuyen" value="0"  />
+<?php echo number_format(0,"0",",","."); ?> VNĐ
+</li>
+<br />
+<br />                                
+</ul>
+</div>
+</div>
+</div>
+<div class="box_cart_content1 bor_top">
+<ul>
+<li class=" w45 font18 text_bo">Tổng cộng:</li>
+<input type="hidden" name="tongtientam1" value="<?php echo $_SESSION['tongtientam1'];?>" />
+<li class="font18 text_bo red_color total-content-more">
+<?php  echo number_format($_SESSION['tongtientam1'],"0",",",".");?>&nbsp;VNĐ			
+</li>
+<br />
+</ul>
+<div class="cb"></div>
+</div>  
+</div>      
+<div class="box_cart_content1 bor_top">         
+
+
+
+<p class="p10b">Nếu bạn có thông tin cần Deal Hàng Việt lưu ý, xin hãy nhập nó vào đây:</p>
+<textarea class="checkout-textarea" name="ghichu" style="height:80px;width:94%;"></textarea>
+<br class="cb">
+
+
+</div>   
+</div> 
+		
+
+		
+                <div class="checkout-button">
+                            <input type="submit" class="btn_continue_checkout pointer" name="ok" value="Đặt hàng"> 
+                    </div>
+					
+
+        <div class="cart-phone">
+            Hỗ trợ đặt hàng: <span>0979 807 668 - 08 668 39296</span>
+        </div>
+  
+</div></div>
+		</div>
+				</div>
+				</form>

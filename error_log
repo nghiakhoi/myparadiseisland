@@ -1,0 +1,62 @@
+[04-Oct-2014 09:52:31 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/vda8ozk/public_html/webdeal/application/controllers/ajax.php on line 11
+[04-Oct-2014 09:52:35 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/vda8ozk/public_html/webdeal/application/controllers/ajax.php on line 11
+[14-Oct-2014 17:46:58 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[14-Oct-2014 17:50:17 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[14-Oct-2014 17:50:18 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[14-Oct-2014 17:50:25 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[14-Oct-2014 17:52:40 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[14-Oct-2014 17:52:52 UTC] PHP Fatal error:  Call to undefined method My_Auth::is_Loginuser() in /home/vda8ozk/public_html/webdeal/application/controllers/verify.php on line 145
+[23-Oct-2014 13:08:16 UTC] PHP Fatal error:  Call to undefined method Mtrangchu::getInfosplienquan() in /home/vda8ozk/public_html/application/controllers/ctrangchu.php on line 156
+[28-Oct-2014 07:05:59 UTC] CSRF state token does not match one provided.
+[28-Oct-2014 07:06:19 UTC] CSRF state token does not match one provided.
+[28-Oct-2014 07:06:22 UTC] CSRF state token does not match one provided.
+[02-Nov-2014 09:49:57 UTC] CSRF state token does not match one provided.
+[05-Nov-2014 12:56:48 UTC] CSRF state token does not match one provided.
+[07-Nov-2014 00:47:42 UTC] CSRF state token does not match one provided.
+[08-Nov-2014 03:08:18 UTC] CSRF state token does not match one provided.
+[08-Nov-2014 03:08:34 UTC] CSRF state token does not match one provided.
+[13-Nov-2014 08:45:01 UTC] PHP Fatal error:  Call to undefined method muser::getallsanpham1() in /home/vda8ozk/public_html/application/controllers/cadmin.php on line 679
+[20-Nov-2014 19:26:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function total_items() on a non-object in /home/vda8ozk/public_html/application/views/vtrangchu.php on line 448
+[20-Nov-2014 19:27:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Call to a member function total_items() on a non-object in /home/vda8ozk/public_html/application/views/vtrangchu.php on line 448
+[20-Nov-2014 12:59:41 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 219
+[20-Nov-2014 13:09:05 UTC] PHP Fatal error:  Class 'CI_Cart' not found in /home/vda8ozk/public_html/application/libraries/my_cart.php on line 3
+[20-Nov-2014 13:37:18 UTC] PHP Fatal error:  Class 'CI_Cart' not found in /home/vda8ozk/public_html/application/libraries/my_cart.php on line 3
+[20-Nov-2014 13:48:30 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 13:49:57 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 13:54:25 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 13:55:15 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 13:56:10 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:00:58 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:01:11 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:01:13 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:07:49 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:07:50 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:07:53 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:09:57 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:09:58 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:10:07 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:10:16 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:10:33 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[20-Nov-2014 14:15:28 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 220
+[06-Dec-2014 08:30:36 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 264
+[06-Dec-2014 08:37:31 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 264
+[06-Dec-2014 08:37:33 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 264
+[06-Dec-2014 08:39:04 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 266
+[06-Dec-2014 08:39:06 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 266
+[06-Dec-2014 08:39:07 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 266
+[06-Dec-2014 08:42:42 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:42:49 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:48:55 UTC] PHP Parse error:  syntax error, unexpected 'parent' (T_STRING), expecting function (T_FUNCTION) in /home/vda8ozk/public_html/application/libraries/my_cart.php on line 4
+[06-Dec-2014 08:48:57 UTC] PHP Parse error:  syntax error, unexpected 'parent' (T_STRING), expecting function (T_FUNCTION) in /home/vda8ozk/public_html/application/libraries/my_cart.php on line 4
+[06-Dec-2014 08:49:09 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:50:01 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:50:05 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:50:24 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:51:09 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[06-Dec-2014 08:51:42 UTC] PHP Fatal error:  Call to undefined method CI_Cart::update_options() in /home/vda8ozk/public_html/application/controllers/cgiohangno.php on line 265
+[13-Dec-2014 11:09:08 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481
+[13-Dec-2014 11:09:15 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481
+[13-Dec-2014 11:09:19 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481
+[13-Dec-2014 11:09:46 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481
+[13-Dec-2014 11:09:53 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481
+[13-Dec-2014 11:10:04 UTC] PHP Fatal error:  Call to undefined function base_url() in /home/vda8ozk/public_html/application/controllers/ajax.php on line 481

@@ -1,0 +1,697 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--[if IE 7]>
+<html class="ie ie7" xmlns="http://www.w3.org/1999/xhtml" lang="vn">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" lang="vn">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vn">
+<!--<![endif]-->	
+<head>
+<title><?php date_default_timezone_set('Asia/Ho_Chi_Minh');
+ $ti="Deal Hàng Việt - sản phẩm khuyến mãi giá rẻ"; 
+if(isset($title)){echo $title;} else echo $ti;?></title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="vn" />
+<meta name="description" content="<?php $de="Deal Hàng Việt - deal sản phẩm giảm giá cực rẻ"; 
+if(isset($des)){echo $des;} else echo $de;?>" />
+<meta name="keywords" content="<?php $ke="deal hàng việt, deal hang viet, dealhangviet.vn"; 
+if(isset($key)){echo $key;} else echo $ke;?>" />
+<meta property="fb:app_id" content="726509060737301" />
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+
+
+<!--[if lt IE 9]>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+
+<link href="<?php echo base_url(); ?>images/logo.png" rel="shortcut icon" alt="Dealhangviet.vn" />
+<link href="<?php echo base_url(); ?>css/jqueryui.css" rel="stylesheet" type="text/css"/>
+<link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="<?php echo base_url(); ?>css/gd.css" rel="stylesheet"/>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/core.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/exceptions.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/lof.sliders.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery_easing.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery.lazyload.pack.js"></script>
+
+
+<script type="text/javascript">
+
+$("img.lazy").lazyload({
+    threshold : 0,
+    effect : "fadeIn"
+});
+
+</script>
+
+<script type="text/javascript">
+
+
+
+$(function($) {
+
+$(".add-to-cart").live("click",function(){
+  var cart = $('.shopping_bg');
+   var imgtofly = $(this).parents('li.cart_items').find('a.product-imagezzz img').eq(0);
+	if (imgtofly) {
+		var imgclone = imgtofly.clone()
+			.offset({ top:imgtofly.offset().top, left:imgtofly.offset().left })
+			.css({'opacity':'0.7', 'position':'absolute', 'height':'100', 'width':'100', 'z-index':'1000'})
+			.appendTo($('body'))
+			.animate({
+				'top':cart.offset().top + 75,
+				'left':cart.offset().left + 25,
+				'width':25,
+				'height':25
+			}, 1000, 'easeInElastic');
+		imgclone.animate({'width':0, 'height':0}, function(){ $(this).detach() });
+	}
+	return false;
+}); 
+
+$("#logomenu").click(function(){
+	$(".menuconmobile").css("display","block");	
+	$("#logomenu1").css("display","block");
+	$("#logomenu").css("display","none");
+	
+	
+}); 
+
+$("#logomenu1").click(function(){
+	$(".menuconmobile").css("display","none");	
+	$("#logomenu1").css("display","none");
+	$("#logomenu").css("display","block");
+	
+	
+});
+
+$(".product-description ul li img").each(function () {
+    $(this).removeAttr("style");
+    $(this).removeAttr("class");
+    $(this).addClass("img-responsive")
+});
+
+
+
+});
+</script>
+
+<script language='javascript'>
+ 
+ function isNumberKey(evt)
+ {
+ var charCode = (evt.which) ? evt.which : event.keyCode
+ if (charCode > 31 && (charCode < 48 || charCode > 57))
+ return false;
+ return true;
+ }
+ 
+ </script>
+
+<script type="text/javascript">
+//<![CDATA[
+var skin_version = 2;
+var index_script = 'index.php';
+var current_path = '';
+var http_location = '';
+var domain_location = '';
+
+
+var lang = {
+	select_district: 'Quận/Huyện',
+	select_state: 'Chọn Tỉnh/Thành phố',
+	select_ward: 'Chọn Phường/Xã',
+	cannot_buy: 'You cannot buy the product with these option variants ',
+	no_products_selected: 'No products selected',
+	error_no_items_selected: 'No items selected! At least one check box must be selected to perform this action.',
+	delete_confirmation: 'Are you sure you want to delete the selected items?',
+	text_out_of_stock: 'Out-of-stock',
+	in_stock: 'Tồn kho',
+	items: 'item(s)',
+	text_required_group_product: 'Please select a product for the required group [group_name]',
+	notice: 'Thông báo',
+	warning: 'Cảnh báo',
+	loading: 'Đang tải...',
+	none: 'None',
+	text_are_you_sure_to_proceed: 'Bạn có chắc là bạn muốn xử lý?',
+	text_invalid_url: 'You have entered an invalid URL',
+	text_cart_changed: 'Items in the shopping cart have been changed. Please click on \"OK\" to save changes, or on \"Cancel\" to leave the items unchanged.',
+	error_validator_email: 'Địa chỉ <b>[field]<\/b> không chính xác.\r\n',
+	error_validator_confirm_email: 'The email addresses in the <b>[field]<\/b> field and confirmation fields do not match.',
+	error_validator_phone: '<b>Số điện thoại<\/b> không chính xác. Định dạng đúng của số điện thoại là (555) 555-55-55 hoặc 55 55 555 5555.',
+	error_validator_integer: 'The value of the <b>[field]<\/b> field is invalid. It should be integer.',
+	error_validator_multiple: 'The <b>[field]<\/b> field does not contain the selected options.',
+	error_validator_password: '<b>[field2]<\/b> và <b>[field1]<\/b> không khớp.',
+	error_validator_required: 'Vui lòng nhập \" <b>[field]<\/b> \" .',
+	error_validator_zipcode: 'The ZIP / Postal code in the <b>[field]<\/b> field is incorrect. The correct format is [extra].',
+	error_validator_message: 'The value of the <b>[field]<\/b> field is invalid.',
+	text_page_loading: 'Loading... Your request is being processed, please wait.',
+	view_cart: 'View cart',
+	checkout: 'Thanh toán',
+	product_added_to_cart: 'Bạn đã thêm deal vào giỏ hàng',
+	products_added_to_cart: 'Products were added to your cart',
+	product_added_to_wl: 'Product was added to your Wish list',
+	product_added_to_cl: 'Product was added to your Compare list',
+	close: 'Close',
+	error: 'Lỗi',
+	error_ajax: 'Oops, something went wrong ([error]). Please try again.',
+	text_changes_not_saved: 'Your changes have not been saved.',
+	text_data_changed: 'Your changes have not been saved.\r\n\r\nPress OK to continue, or Cancel to stay on the current page.'
+}
+
+var currencies = {
+	'primary': {
+		'decimals_separator': ',',
+		'thousands_separator': '.',
+		'decimals': '0',
+		'coefficient': '1'
+	},
+	'secondary': {
+		'decimals_separator': ',',
+		'thousands_separator': '.',
+		'decimals': '0',
+		'coefficient': '1'
+	}
+};
+
+var default_editor = 'tinymce';
+var default_previewer = 'prettyphoto';
+
+var cart_language = 'VN';
+var images_dir = '/images';
+var skin_name = 'hotdealv2';
+var notice_displaying_time = 5;
+var cart_prices_w_taxes = false;
+var translate_mode = false;
+var regexp = new Array();
+
+
+	$(document).ready(function(){
+
+	});
+
+$(document).ready(function(){
+	jQuery.runCart('C');
+});
+
+//]]>
+</script>
+<script type="text/javascript" src="<?php echo base_url();?>js/gd.js"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5453861200c365f9" async="async"></script>
+
+
+<script>(function() {
+var _fbq = window._fbq || (window._fbq = []);
+if (!_fbq.loaded) {
+var fbds = document.createElement('script');
+fbds.async = true;
+fbds.src = '//connect.facebook.net/en_US/fbds.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(fbds, s);
+_fbq.loaded = true;
+}
+_fbq.push(['addPixelId', '729008417176927']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=729008417176927&amp;ev=PixelInitialized" /></noscript>
+
+<style type="text/css">
+
+
+
+
+</style>
+
+</head>
+<body class="c-index m-index cm-index-index ">
+
+<script type="text/javascript">
+	var server_time = '<?php $now = getdate();  echo mktime($now["hours"],$now["minutes"],$now["seconds"],$now["mon"],$now["mday"],$now["year"]);mktime($now["hours"],$now["minutes"],$now["seconds"],$now["mon"],$now["mday"],$now["year"]); ?>';
+</script>
+<div class="helper-container">
+<a name="top"></a>
+
+<div id="container" class="container-long">
+<div id="header">
+<div class="hd-header-top">
+<div class="hd-header-top-inner">
+
+
+<?php 
+		//echo $info['idkhach'];
+		if(!isset($info['username']))
+		{
+		?>
+
+
+<div class="float-right" id="sign_io">
+<ul class="top-menu dropdown">
+
+<li class="first-level"><span><a href="<?php echo base_url();?>dang-ky-thanh-vien.html" rel="nofollow">Đăng ký</a></span>
+</li>
+<li class="first-level"><span><a
+id="sw_login" class="cm-combination">Đăng nhập</a></span>
+</li>
+</ul>
+<div id="login" class="cm-popup-box hidden">
+<div class="login-popup">
+<div class="header">Đăng nhập</div>
+<form method="post" action="<?php echo base_url();?>verify/loginuser" name="login_popup_form">
+<input type="hidden" value="login_popup_form" name="form_name">
+<input type="hidden" value="index.php" name="return_url">
+<div class="form-field">
+<label class="cm-required cm-trim cm-email" for="login_popup">Tài khoản:</label>
+<input  class="input-text cm-focus" type="text" value="" size="30" name="username">
+</div>
+<div class="form-field">
+<label class="cm-required" for="psw_popup">Mật khẩu:</label>
+<input id="psw_popup" class="input-text password" type="password" value="" size="30" name="password">
+</div>
+
+<div class="clear" style="margin-top: 1px; float: left;">
+<div class="float-left clear-both">
+<span class="button-submit-action">
+<input type="submit" value="Đăng nhập" name="">
+</span>
+</div>
+<div class="float-left" style="padding-left:20px">
+<p class="center">
+[
+<a href="#">Quên mật khẩu?</a>
+]
+</p>
+</div>
+<div class="float-left" style="clear:both;">
+<div class="box-social" style="width: 244px; border-radius: 4px; padding-bottom: 2px;">
+<span class="social-title" style="margin-right: 25px;">Hoặc bằng tài khoản</span>
+<a id="login-facebook" class="login-social social-facebook" style="padding-right: 4px !important;" href="#"> </a>
+<a id="login-google" class="login-social social-google" style="padding-right: 4px !important;" href="#"> </a>
+<a id="login-yahoo" class="login-social social-yahoo" style="padding-right: 4px !important;" href="#"> </a>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<?php
+		
+		//$this->load->view("vdangnhapuser");
+		
+		}
+		
+		else if(isset($info['username']))
+		{
+		
+		?>
+
+
+<div id="sign_io" class="float-right">
+<ul class="top-menu dropdown">
+<li class="first-level">
+<span>
+<a class="strong" href="<?php echo base_url();?>thong-tin-khach-hang.html">
+<img class="avatar" alt="" src="<?php echo base_url();?>images/no-avatar.jpg">
+Xin chào <?php echo $info['hoten'];?>
+</a>
+</span>
+<ul class="login-popup sub-menu dropdown-vertical-rtl">
+<li>
+<a class="underlined" rel="nofollow" href="<?php echo base_url();?>thong-tin-khach-hang.html">Thông tin cá nhân</a>
+</li>
+<li>
+<a class="underlined" rel="nofollow" href="#">Đơn hàng</a>
+</li>
+<li>
+<a class="underlined" rel="nofollow" href="<?php echo base_url();?>dang-xuat1.html">Đăng xuất</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<?php }?>
+<!--sign_io-->
+
+
+
+</div>
+</div>
+<div class="hd-header-bottom">
+<div class="hd-header-bottom-inner">
+<h3 id="logo"><a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>images/logodeal1.png" class="avatar"
+alt="Dealhangviet.vn"/></a></h3>
+<h3 id="logomenu"><img src="<?php echo base_url();?>images/more.png" class="avatar"
+alt="Dealhangviet.vn"/></h3>
+<h3 id="logomenu1"><img src="<?php echo base_url();?>images/more.png" class="avatar"
+alt="Dealhangviet.vn"/></h3>
+<div class="search-menu">
+<a class="icon"></a>
+<div class="sub-menu-wrapper sub-menu-search">
+
+</div>
+</div>
+
+
+<ul class="catalog-menu">
+
+
+
+
+<?php foreach($menucha as $item1)
+{ ?>
+<li class="first-level catalog-menu-40  cat-59">					
+<span>
+<a style="font-size: 13px; " href="<?php echo base_url();?>danh-muc/<?php echo $item1['slug'];?>-<?php echo $item1['iddmcha'];?>.html">
+<?php echo $item1['tendmcha'];?>
+</a>
+</span>
+
+<div class="sub-menu-wrapper">
+<ul class="sub-menu">
+<?php 
+
+foreach($menucon as $item2)
+{ 
+	if($item1['iddmcha']==$item2['iddmcha'])
+	{
+?>
+<li>
+<a href="javascript:void(0);">* <?php echo $item2['tendmcon'];?></a>
+<div class="sub-menu-wrapper1" style="display:none;">
+<ul class="sub-menu1">
+<li>
+
+<a href="<?php echo base_url();?>danh-muc-con/<?php echo $item2['slug'];?>-<?php echo $item2['iddmcon'];?>.html">+ Tất cả</a>
+
+</li>
+<?php 
+
+foreach($menusubcon as $item3)
+{ 
+	if($item3['iddmcon']==$item2['iddmcon'])
+	{
+?>
+
+
+
+<li style="margin-left:20px;">
+
+<a href="<?php echo base_url();?>danh-muc-sub-con/<?php echo $item3['slug'];?>-<?php echo $item3['iddmsubcon'];?>.html">+ <?php echo $item3['tendmsubcon'];?></a>
+
+</li>
+
+
+
+<?php 
+}else{echo "";}
+
+}
+?>
+</ul>
+</div>
+</li>
+<?php 
+}
+
+}
+?>
+</ul>
+</div>
+</li>
+<?php
+}
+?>
+
+
+
+
+</ul>
+
+<script type="text/javascript">
+
+
+
+$(function($) {
+
+
+$('.sub-menu-wrapper').hover(function(){ 
+    
+});
+
+$(".sub-menu-wrapper .sub-menu li").on({
+    click: function () {
+       $(this).find('.sub-menu-wrapper1').slideToggle();//toggle submenu
+	   
+    },
+    /* mouseleave: function () {
+       $(this).find('.sub-menu-wrapper1').slideUp(); //toggle submenu
+	   
+    } */
+});
+
+
+$('#menu .first-level .second-level:has("#submenu1")').click(function(){ 
+    $(this).children('#submenu1').slideToggle(); //toggle submenu
+});
+
+
+
+});
+</script>
+
+<div style="clear:both;"></div>
+<div class="menuconmobile">
+<ul>
+<?php foreach($menucha as $item1)
+{ ?>
+<li><a style="font-size: 13px;color:white;font-size:16px;margin-left:10px;text-decoration:none; " href="<?php echo base_url();?>danh-muc/<?php echo $item1['slug'];?>-<?php echo $item1['iddmcha'];?>.html">
+<?php echo $item1['tendmcha'];?>
+</a></li>
+
+<?php }?>
+</ul>
+</div>
+</div>
+</div></div>     
+<div id="content" class="<?php $a=base_url()."ctrangchu"; $b=base_url(); $c="http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; $d="http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; if($hienthi==1) echo "them"; if($hienthi==2) echo "them1"; if($hienthi==3) echo "them2";?>" style="<?php if($hienthi==1) echo "background: url(".base_url()."/images/bn_gia_soc_home.jpg) repeat-x scroll 50% 38px rgba(0, 0, 0, 0);";?>">                 
+
+<?php echo $content_for_layout ;// các file view được nạp vào layout?>
+
+</div>
+<div id="footer">
+<div class="footer-top">
+<div class="margin">
+<div class="footer_top" style="padding-top: 0;">
+<!--<h6 class="footer-
+
+"><a href="#"><img src="/skins/hotdealv2/customer/images/logo-hotdealvn.png" class="avatar" alt="Hotdeal.vn" width="201"/></a></h6>-->
+<div class="clear"></div>
+<div class="footerbox" style="padding-top: 20px;">
+<h3><span>GIỚI THIỆU</span></h3>
+<ul>
+<li><a href="#">Deal Hàng Việt là gì?</a></li>
+<li><a href="#">Hỏi đáp</a></li>
+
+</ul>
+</div>
+<div class="footerbox" style="padding-top: 20px;">
+<h3><span>TRỢ GIÚP</span></h3>
+<ul>
+<li><a href="#">Hướng dẫn thanh toán</a></li>
+
+</ul>
+</div>
+<div class="footerbox" style="padding-top: 20px;">
+<h3><span>HỢP TÁC</span></h3>
+<ul>
+
+<li><a href="#">Quyền lợi hợp tác</a></li>
+<li><a href="#">Liên hệ hợp tác</a></li>
+</ul>
+</div>
+<div class="footerbox" style="width: 300px; padding-top: 20px;">
+<h3><span>ĐỊA CHỈ</span></h3>
+<div class="address">VP: F1/62C, Quách Điêu, Vĩnh Lộc A, Bình Chánh, TP.HCM
+</div>
+<div class="address-maps">
+<a href="mailto:dealhangviet@gmail.com" class="icon_email_foot">
+dealhangviet@gmail.com
+</a> 
+						
+</div>
+
+	
+</div>								
+<div class="clear"></div>	
+	
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<hr />
+<div class="footer-hotline">
+<div class="margin">
+<label>HOTLINE:  0979 807 668 - 08 668 39296</label>
+<ul class="footer-social">
+<li><a class="social-icons icon-facebook" href="#" target="_blank" title="">&nbsp;</a></li>
+<li><a class="social-icons icon-google" href="#" target="_blank" title="">&nbsp;</a></li>
+
+
+<li>
+<div class="footer-contact-hotdeal">
+<a href="#" title="">
+Bạn muốn hợp tác với Deal Hàng Việt?
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="margin">
+<div class="footer_bottom">
+<div class="copyright">
+<a rel="nofollow" target="_blank" href="#" style="
+display: block;
+float: left;
+margin-right: 6px;
+"><img title="" src="<?php echo base_url();?>images/logo.png" alt="CÔNG TY DEAL HÀNG VIỆT dealhangviet.vn" width="90" /></a>
+<p style="line-height: 20px;">CÔNG TY DEAL HÀNG VIỆT<br />
+ĐT:  0979 807 668 - 08 668 392969 </br>
+Email: <a href="mailto:dealhangviet@gmail.com">dealhangviet@gmail.com</a>
+</p>
+<div class="clear"></div>
+
+<div class="clear"></div>	
+</div>
+
+<div class="copyright-right" style="display:none;">
+<?php $this->load->view('thongketruycap');?>
+</div>
+
+</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+
+<!-- AddThis Button END -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".yahoo-icon").each(function() {
+			$(this).attr("src", $(this).attr("org-src"));
+		});
+	});
+</script>
+<script type="text/javascript" src="<?php echo base_url();?>js/myscroll.js"></script>
+</div>
+<div style="clear: both;"></div>
+</div>
+</div>
+
+<script>
+
+
+$(document).ready(
+            function() {
+                
+                  
+
+ 
+ 
+$("#dongpopupdathang").click(function(){
+	$("#popupdathang").css("display","none");			 
+	
+	
+}); 
+
+$("#dongpopupdathang").click(function(){
+	$("#popupdathang").css("display","none");			 
+	
+	
+});  
+
+
+
+
+                
+            });
+
+</script>
+
+
+
+<a id="cartgiohang" href="<?php echo base_url();?>cgiohangno" ><div  style="box-shadow:5px 0px 5px 5px green;cursor:pointer;position:fixed; top:220px; right:10px;z-index:91;width:50px; height:100px;background-image:url('<?php echo base_url();?>images/cart.png');background-size: contain no-repeat;;background-color: rgba(0,0,0,0.5);border-radius:10px;">
+<div class="shopping_bg" style="height:100px;margin-top:5px;color:white;">Số sản phẩm: <div id="txtHint" style="color:white;"><?php echo $this->cart->total_items();?></div></div></div></a>
+
+  
+<div id="popupdathang" style="position:fixed; bottom:100px; right:0px;z-index:90;background-image:url('<?php echo base_url();?>images/Van-chuyen.png');  width:100px; height:200px;background-size: contain;-webkit-background-size: contain;-moz-background-size: contain;">
+  <div id="dongpopupdathang" style="cursor:pointer;position:absolute;top:15px;width:20px; height:20px;background-image:url('<?php echo base_url();?>images/close.png');"></div>
+  
+  <div style="float:right; margin-right:-0px; margin-top:43px; height:100px;width:90px;">
+  
+  <p style="font-weight:bold;font-size:11px;"><span style="color:green;font-weight:bold;">Tư vấn<br> đặt hàng</span><br> 08.668.39296 <br> 0979.807.668</p>
+  
+  </div>
+  
+  </div>
+
+<script type="text/javascript">
+	//<![CDATA[
+	var _gaq = _gaq || [];
+	_gaq.push(["_setAccount", "UA-41281678-5"]);
+	_gaq.push(['_setDomainName', 'dealhangviet.vn']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]>
+
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=726509060737301&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  window.fbAsyncInit = function() {
+	// init the FB JS SDK
+	FB.init({
+	  appId      : '726509060737301',                        // App ID from the app dashboard
+	  //channelUrl : '//http://hotdeal.vn/channel.html', // Channel file for x-domain comms
+	  status     : true,                                 // Check Facebook Login status
+	  xfbml      : true                                  // Look for social plugins on the page
+	});
+
+	// Additional initialization code such as adding Event Listeners goes here
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/all.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+</body>
+</html>

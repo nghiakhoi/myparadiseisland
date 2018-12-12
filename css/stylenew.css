@@ -1,0 +1,401 @@
+@charset "UTF-8";
+/*-------------------------------------------------------------------
+[Master Stylesheet]
+
+Theme Name: Apparel
+Theme URI:		http://wp-apparel.romza.ru/
+Author: Romza
+Author URI:		http://romza.ru/
+Description: Apparel is a WordPress eCommerce theme for running an online store. The theme supports the functions of the WooCommerce plugin, so you can run a functioning eCommerce site using WordPress.
+Documentation: http://romza.ru/wp/apparel/documentation/index.html
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version:	1.4.0
+Changed:	November 4 2016
+Text Domain: apparel
+-------------------------------------------------------------------*/
+
+@import url(./css/s.css);
+
+div[class*="order-step"] .main p {
+     margin-bottom: 0px;
+     margin-top: 0px;
+}
+
+.woocommerce a.added_to_cart {
+     padding-right: .5em;
+}
+
+.footer-service-menu li:before {
+     content: "";
+}
+
+.catalog.catalog-list .catalog-item, 
+.catalog.catalog-table .catalog-item {
+    padding-left: 5px;
+}
+
+@media only screen and (max-width: 767px){
+	.footer-contacts-menu-social li {
+		display: inline-block;
+	}
+}
+
+.recommended-item .img-container:after{
+    position: relative;
+}
+
+.navigation.pagination .screen-reader-text{
+    display: none;
+}
+
+.yith-wcwl-add-to-wishlist {
+    display: inline-block;
+}
+.yith-wcwl-share .email:before {
+	content: '';
+}
+.yith-wcan-select-wrapper {
+	max-width: 292px;
+}
+a.product-action-link.favorite
+{
+    margin: 0;
+}
+
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.screen-reader-text {}
+.gallery-caption {}
+.bypostauthor {}
+.alignright {}
+.alignleft {}
+.aligncenter {}
+
+.btn-variable {
+  display: inline;
+}
+
+.btn-variable:before {
+  font-family: "Flaticon";
+  content: "\e00e";
+  font-size: 32px !important;
+  position: relative;
+  top: 2px;
+  right: 4px;
+}
+
+/* mini basket */
+.dropdown-cart-button {
+    font-weight: normal;
+    min-height: 35px;
+    text-align: left;
+    padding: 0px;
+    margin: 0;
+    position: relative;
+    z-index: 10 !important;
+    overflow: visible;
+    display: inline-block;
+    border: none;
+    background: none;
+}
+.dropdown-cart-button .dropdown-total {
+    display: block;
+    line-height: 25px;
+    padding: 0px;
+    outline: 0;
+	color: white;
+	background: none;
+}
+.dropdown-cart-button .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #bfb9c3;
+    padding: 10px 6px 8px;
+    width: 380px;
+	color: #bfb9c3;
+	line-height: 25px;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+.mini_cart_item a{
+	color: #000;
+}
+.mini_cart_item a:hover{
+	color: #000;
+}
+.mini_cart_item {
+	font-size:17px;
+	padding-top:30px; 
+}
+.cart-title {
+	margin-top:5px;
+	font-family: Roboto;
+	font-size: 16px;
+	overflow: hidden;
+	line-height: 1;
+	text-overflow: ellipsis;
+}
+
+.cat-terms {
+	position:relative;
+	color:#9f9e9e;
+	font-weight: normal;
+	bottom: 37px;
+	font-size: 14px;
+}
+.dropdown-cart-button .dropdown.dropdown-left {
+    right: auto;
+    left: -1px;
+}
+.dropdown-cart-button .dropdown.dropdown-right {
+    right: -1px;
+    left: auto;
+}
+@media (max-width: 767px) {
+  .dropdown-cart-button .dropdown.dropdown-right {
+    margin-right: -130%;
+  }
+}
+.dropdown-cart-button .dropdown.drop-left {
+    right: auto !important;
+    left: -1px !important;
+}
+}.dropdown-cart-button .dropdown .cart_list {
+    font-size: 12px;
+    padding: 0 0 8px 0;
+    margin: 0;
+}
+.dropdown-cart-button .dropdown .cart_list li {
+    clear: both;
+    min-height: 30px;
+    margin: 0;
+    padding: 3px 0;
+    border-bottom: 1px dashed #bfb9c3;
+    list-style: none;
+    position: relative;
+}
+.dropdown-cart-button .dropdown .cart_list li:after {
+    content: '.';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}
+.dropdown-cart-button .dropdown .cart_list img {
+	position: relative;
+    width: 80px;
+	max-height: 80px;
+    height: auto !important;
+    min-width: 0;
+    max-width: none;
+    margin-right: 4px;
+    float: left;
+	padding:5px;
+	-webkit-transform: none;
+	transform: none !important;
+	margin-top: 0px;
+	
+}
+.totalitems {
+	color:#43505e;
+	border-bottom: 2px dashed #bfb9c3;
+	padding-bottom:5px;
+}
+.dropdown-cart-button .dropdown .cart_list a {
+    float: left;
+    font-weight: normal !important;
+    width: 75%}
+.dropdown-cart-button .dropdown .cart_list a.remove_but{
+    display: block;
+	position: absolute;
+	left: 95%;
+	top: -1%;
+}
+.dropdown-cart-button .dropdown .cart_list .quantity {
+    display: inline-block;
+    width: 25%;
+	font-size:14px;
+	margin-top:15px;
+}
+.dropdown-cart-button .dropdown .cart_list .quantitytotal {
+    display: inline-block;
+	text-align:right;
+	margin-left:-9px;
+    width: 25%}
+.dropdown-cart-button .dropdown .cart_list .variation {
+    clear: left;
+    float: left;
+    width: 75%}
+.dropdown-cart-button .dropdown .cart_list .variation dt, .dropdown-cart-button .dropdown .cart_list .variation dd {
+    display: inline-block !important;
+}
+.dropdown-cart-button .dropdown .cart_list .variation dt p, .dropdown-cart-button .dropdown .cart_list .variation dd p {
+    margin: 0;
+}
+.dropdown-cart-button .dropdown .buttons {
+    text-align: right;
+    margin: 0;
+    padding: 5px 0;
+}
+/*end mini basket*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+#upd_but {display:none;}
+.ttrclear  {
+ border: 0px;
+ }
+ .data-container {
+ border:0px !important;
+ }
+ .price {
+ border:0px !important;
+ }
+ .short-description {
+ font-size: 13px;
+ }
+ .waitlist {
+ margin-left:20px !important;
+ margin-top:-7px;
+ }
+ .total-price {
+ color: #726c76;
+ float: left;
+ margin-left: 5px;
+ margin-top: 10px;
+ font-size: 14px;
+ }
+ .price-usd {
+ color: #000;
+ font-weight: bold;
+ }
+ .site-map-menu, .site-map-menu ul {
+    list-style: none;
+ }
+ .site-map-menu li .icon {
+ padding-left: 20px;
+ }
+ .site-map-menu li .icon::after {
+    font-family: Flaticon;
+    font-weight: normal;
+    content: "\e020";
+    line-height: 26px;
+    position: relative;
+    top: 2px;
+    left: -10px;
+    font-size: 16px;
+}
+ .site-map-menu > li.expandable > .map-item > .icon::after, .site-map-menu ul > li.expandable > .map-item > .icon::after {
+    content: "\e013";
+}
+.site-map-menu li a {
+    -webkit-transition: .3s;
+    transition: .3s;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+.site-map-menu li {
+    position: relative;
+    padding: 5px 0px;
+}
+.site-map-menu > li.smhome > .map-item > .icon::after {
+    content: "\e017";
+}
+.thing-empty {
+	cursor: default;
+}
+.button.compare {
+    background: none !important;
+    color: transparent !important;
+    text-align:center; 
+}
+.button.compare:after {
+    content: none !important;
+}
+.compare .button .added {
+text-indent: -9999px !important;
+}
+.pwb-single-product-brands {
+position: absolute;
+left: 555px;
+top: 145px;
+}
+.iditems {display: none;}
+.widget_price_filter {margin-top: 25px;}
+.product-page h3 .text {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -38px;
+}
+ins {
+    color: #000;
+ font-weight: bold;
+ text-align: center;
+    clear: both;
+    font-size: 20px;
+    text-decoration: none;
+}
+del {
+    font-size: 16px;
+    font-weight: normal;
+        text-align: center;
+    clear: both;
+    color: silver;
+}
+.catalog .price {
+    color: #000;
+    font-weight: bold;
+}
+
+#carousel-new .slick-slide, #carousel-bestsellers .slick-slide {
+    outline: none;
+}
+ 
+.catalog-item-thumbnails .slick-slide{
+    margin-right: 5px;
+}
+.catalog-item-thumbnails .slick-track{
+    margin: 0 -5px;
+}
+
+#carousel-new .slick-prev, .slick-next, #carousel-bestsellers .slick-prev, .slick-next { 
+    z-index:9999;
+}
+#carousel-new .slick-track, #carousel-bestsellers .slick-track {
+    width:100%;
+}
+.ys-loc-autocomplete {
+margin-left: 19px;
+}
+.main-menu > li.discount > a {
+    color: #c20000;
+}
+.main-menu > li.discount > a:hover {
+    color: #c20000;
+}
+.main-menu > li.new > a {
+    color: #c27700;
+}
+.main-menu > li.new > a:hover {
+    color: #c27700;
+}
+.form-control {
+border-radius: 4px !important;
+border-bottom-right-radius: 0 !important;
+border-top-right-radius: 0 !important;
+}
+.btn-submit {
+font-weight: bold;
+}
+.woocommerce a.button {
+display: inline;
+}

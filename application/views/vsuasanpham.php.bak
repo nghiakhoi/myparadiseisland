@@ -1,0 +1,517 @@
+<script>
+function showUser(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("GET",'<?php echo base_url();?>index.php/ajax/ajax_level2/'+str,true);
+  xmlhttp.send();
+}
+</script>
+
+<script>
+function showUser1(str) {
+  if (str=="") {
+    document.getElementById("txtHint1").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+      document.getElementById("txtHint1").innerHTML=xmlhttp.responseText;
+    }
+  }
+  
+  xmlhttp.open("GET",'<?php echo base_url();?>index.php/ajax/ajax_level2a/'+str,true);
+  xmlhttp.send();
+}
+</script>
+
+
+<?php //print_r($loaidoan);?>
+
+<?php
+$ngaythang= date('d/m/Y');
+  
+
+
+    $idsp = array(
+                        'name'        => 'idsp',
+                        'id'          => 'idsp',
+                        'width'          => '10px',
+						'class'        => 'inp-form',
+						'value'        => $info['idsp'],
+                    );
+
+    $tensp = array(
+                        'name'        => 'tensp',
+                        'id'          => 'tensp',
+                        'width'          => '10px',
+						'class'        => 'inp-form',
+						'value'        => $info['tensp'],
+                    );
+	
+    $motangan = array(
+                        'name'        => 'motangan',
+                        'id'          => 'motangan',
+                        'value'        => $info['motangan'],
+						
+                    );
+	
+    $tukhoa = array(
+                        'name'        => 'tukhoa',
+                        'id'          => 'tukhoa',
+                        'class'        => 'inp-form',
+						'value'        => $info['tukhoa'],
+                    );
+					
+	$size = array(
+                        'name'        => 'size',
+                        'id'          => 'size',
+                        'class'        => 'inp-form',
+						'value'        => $info['size'],
+                    );
+	$trongluong = array(
+                        'name'        => 'trongluong',
+                        'id'          => 'trongluong',
+                        'class'        => 'inp-form',
+						'value'        => $info['trongluong'],
+                    );
+	$giagoc = array(
+                        'name'        => 'giagoc',
+                        'id'          => 'giagoc',
+                        'class'        => 'inp-form',
+						'value'        => $info['giagoc'],
+                    );		
+				
+	$giagiam = array(
+                        'name'        => 'giagiam',
+                        'id'          => 'giagiam',
+                        'class'        => 'inp-form',
+						'value'        => $info['giagiam'],
+                    );
+					
+	$ngayketthuc = array(
+                        'name'        => 'ngayketthuc',
+                        'id'          => 'ngayketthuc',
+                        'class'        => 'inp-form',
+						'value'        => $info['ngayketthuc'],
+                    );
+	
+	
+	$des = array(
+                        'name'        => 'des',
+                        'id'          => 'des',
+                        
+						'value'        => $info['des'],
+                    );
+	$diemnoibat = array(
+                        'name'        => 'diemnoibat',
+                        'id'          => 'diemnoibat',
+                        'class'        => 'inp-form',
+						'value'        => $info['diemnoibat'],
+                    );
+	$dieukien = array(
+                        'name'        => 'dieukien',
+                        'id'          => 'dieukien',
+                        'class'        => 'inp-form',
+						'value'        => $info['dieukien'],
+                    );
+	$motachitiet = array(
+                        'name'        => 'motachitiet',
+                        'id'          => 'motachitiet',
+                        'class'        => 'inp-form',
+						'value'        => $info['motachitiet'],
+                    );
+	$ngayketthuc = array(
+                        'name'        => 'ngayketthuc',
+                        'id'          => 'ngayketthuc',
+                        'class'        => 'inp-form',
+						'value'        => $info['ngayketthuc'],
+                    );
+	$hinhthuc = array(
+                        'name'        => 'hinhthuc',
+                        'id'          => 'hinhthuc',
+                        'class'        => 'inp-form',
+						'value'        => $info['hinhthuc'],
+                    );
+	$thutu = array(
+                        'name'        => 'thutu',
+                        'id'          => 'thutu',
+                        'class'        => 'inp-form',
+						'value'        => $info['thutu'],
+						'placeholder'  => 'Thứ tự ưu tiên để hiển thị sản phẩm trên cùng',
+                    );
+    
+					
+	
+	
+	
+	$submit = array(
+                        "name"=>"ok",
+                        "value"=>"Sửa",
+						
+                    );
+					
+				
+					
+?>
+
+
+<script type="text/javascript" src="<?php echo base_url();?>ckeditor/ckeditor.js"></script>
+ <link rel="stylesheet" href="<?php echo base_url();?>css/jquery-ui.css" />
+    <script src="<?php echo base_url();?>js/jquery-1.8.3.js"></script>
+    <script src="<?php echo base_url();?>js/jquery-ui.js"></script>
+
+  
+
+
+
+
+
+
+
+    
+
+
+
+
+ 
+
+
+
+<div id="page-heading"><h2>Sửa sản phẩm</h2></div>
+
+
+
+
+<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+<tr>
+    <th rowspan="3" class="sized"><img src="<?php echo base_url();?>images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
+    <th class="topleft"></th>
+    <td id="tbl-border-top">&nbsp;</td>
+    <th class="topright"></th>
+    <th rowspan="3" class="sized"><img src="<?php echo base_url();?>images/shared/side_shadowright.jpg" width="20" height="300" alt="" /></th>
+</tr>
+<tr>
+    <td id="tbl-border-left"></td>
+    <td>
+    <!--  start content-table-inner -->
+    <div id="content-table-inner">
+    
+    <table border="0" width="100%" cellpadding="0" cellspacing="0">
+    <tr valign="top">
+    <td>
+    
+    
+        
+    <form action="" id="form1" name="form1" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+        <!-- start id-form -->
+    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+        <tr>
+            <th valign="top"><?php echo form_label("Ẩn / Hiện sản phẩm: ")?></th>
+            <td><select  name="anhien" class="styledselect_form_1" >
+		
+				
+                    <option value="<?php if($info['anhien']==0) echo "0"; else echo "1";?>"><?php if($info['anhien']==0) echo "Hiện"; else echo "Ẩn";?></option>
+					<option value="<?php if($info['anhien']==0) echo "1"; else echo "0";?>"><?php if($info['anhien']==0) echo "Ẩn"; else echo "Hiện";?></option>
+					
+                </select>
+				<?php echo form_input($thutu); ?>
+				</td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Có phải là sản phẩm Giảm giá nhiều nhất? ")?></th>
+            <td><input type="radio" <?php if($info['hot']==1) echo "checked=true";?> name="hot" value="1"/>Phải<br><br><input <?php if($info['hot']==0) echo "checked=true";?> type="radio" name="hot" value="0"/>Không</td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Có phải là sản phẩm Mới nhất? ")?></th>
+            <td><input type="radio" <?php if($info['new']==1) echo "checked=true";?> name="new" value="1"/>Phải<br><br><input <?php if($info['new']==0) echo "checked=true";?> type="radio" name="new" value="0"/>Không</td>
+            <td></td>
+        </tr>
+		<tr>
+            <th valign="top"><?php echo form_label("Có phải là sản phẩm Bán chạy nhất? ")?></th>
+            <td><input type="radio" <?php if($info['chay']==1) echo "checked=true";?> name="chay" value="1"/>Phải<br><br><input <?php if($info['chay']==0) echo "checked=true";?> type="radio" name="chay" value="0"/>Không</td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Mã sản phẩm: ")?></th>
+            <td><?php echo form_input($idsp); ?></td>
+            <td></td>
+        </tr>
+		<tr>
+            <th valign="top"><?php echo form_label("Tên sản phẩm: ")?></th>
+            <td><?php echo form_input($tensp); ?></td>
+            <td></td>
+        </tr>
+		<tr>
+            <th valign="top"><?php echo form_label("Mô tả ngắn - SEO: ")?></th>
+            <td><?php echo form_textarea($des); ?></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th valign="top"><?php echo form_label("Mô tả ngắn: ")?></th>
+            <td><?php echo form_textarea($motangan)?><script type="text/javascript">
+                        CKEDITOR.replace( 'motangan' );
+						//CKEDITOR.config.height=100;
+                </script></td>
+            <td>
+            
+            
+            </td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Từ khóa: ")?></th>
+            <td><?php echo form_input($tukhoa); ?></td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Giá gốc: ")?></th>
+            <td><?php echo form_input($giagoc); ?></td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Giá: ")?></th>
+            <td><?php echo form_input($giagiam); ?></td>
+            <td></td>
+        </tr>
+		
+		
+	
+		<tr>
+            <th valign="top"><?php echo form_label("Điểm nổi bật: ")?></th>
+            <td><?php echo form_textarea($diemnoibat)?><script type="text/javascript">
+                        CKEDITOR.replace( 'diemnoibat' );
+						//CKEDITOR.config.height=100;
+                </script></td>
+            <td>
+            
+            
+            </td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Điều kiện: ")?></th>
+            <td><?php echo form_textarea($dieukien)?><script type="text/javascript">
+                        CKEDITOR.replace( 'dieukien' );
+						//CKEDITOR.config.height=100;
+                </script></td>
+            <td>
+            
+            
+            </td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Mô tả chi tiết: ")?></th>
+            <td><?php echo form_textarea($motachitiet)?><script type="text/javascript">
+                        CKEDITOR.replace( 'motachitiet' );
+						//CKEDITOR.config.height=100;
+                </script>
+				<br><span style="color:red;font-weight:bold;">*Ghi chú: Hình ảnh trong Mô tả chi tiết nên đặt Width(Độ rộng)=600px, Height(Độ cao) sẽ tự động cân chỉnh</span>
+				
+				</td>
+            <td>
+            
+            
+            </td>
+        </tr>
+		
+		
+        
+		
+		
+		
+		
+        <tr>
+        <th valign="top">Danh mục cha:</th>
+        <td>  <select  name="danhmuccha" class="styledselect_form_1" onchange="showUser(this.value)">
+		<option value="<?php echo $info['iddmcha'];?>"><?php echo $info['tendmcha'];?></option>
+				<?php 
+				
+				foreach($info1 as $item)
+				{?>
+                    <?php if($info['iddmcha']!=$item['iddmcha'])echo '<option value="'.$item['iddmcha'].'">';?><?php if($info['tendmcha']!=$item['tendmcha'])echo $item['tendmcha']."</option>";?>
+                 <?php };   ?>
+                </select>
+            
+        </td>
+        <td></td>
+        </tr>
+		
+        
+		<tr>
+            <th valign="top"><?php echo form_label("Danh mục con: ")?></th>
+            <td id="level2"><div id="txtHint">
+			<div name="level2">
+			<select  name="danhmuccon" class="styledselect_form_1" onchange="showUser1(this.value)">
+		<option value="<?php echo $info['iddmcon'];?>"><?php echo $info['tendmcon'];?></option>
+				<?php 
+				
+				foreach($info2 as $item2)
+				{?>
+                    <?php if($info['iddmcon']!=$item2['iddmcon'])echo '<option value="'.$item2['iddmcon'].'">';?><?php if($info['tendmcon']!=$item2['tendmcon'])echo $item2['tendmcon']."</option>";?>
+                 <?php };   ?>
+                </select>
+</div>
+			
+			
+			</div></td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Loại sản phẩm: ")?></th>
+            <td id="level2"><div id="txtHint1">
+			<div name="level2">
+			<select  name="loaisp" class="styledselect_form_1">
+		<option value="<?php echo $info['iddmsubcon'];?>">
+		<?php echo $info['tendmsubcon'];?></option>
+				<?php 
+				
+				foreach($info3 as $item3)
+				{?>
+                    <?php if($info['iddmsubcon']!=$item3['iddmsubcon'])echo '<option value="'.$item3['iddmsubcon'].'">';?><?php if($info['tendmsubcon']!=$item3['tendmsubcon'])echo $item3['tendmsubcon']."</option>";?>
+                 <?php };   ?>
+                </select>
+</div>
+			
+			
+			</div></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th valign="top"><?php echo form_label("Dạng sản phẩm: ")?></th>
+            <td><select  name="hinhthuc" class="styledselect_form_1" >
+		
+				
+                    <option value="<?php if($info['hinhthuc']==0) echo "0"; else echo "1";?>"><?php if($info['hinhthuc']==0) echo "Giao sản phẩm"; else echo "Giao voucher";?></option>
+					<option value="<?php if($info['hinhthuc']==0) echo "1"; else echo "0";?>"><?php if($info['hinhthuc']==0) echo "Giao voucher"; else echo "Giao sản phẩm";?></option>
+					
+                </select></td>
+            <td></td>
+        </tr>
+		<tr>
+            <th valign="top"><?php echo form_label("Hình ảnh chính: ")?></th>
+            <td><input type="file" name="img" id="img">
+			<img width="100px" height="100px" src="<?php echo base_url();?>uploads/<?php echo $info['hinhanhchinh'];?>"  border="0" />
+			
+			</td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Hình ảnh phụ: ")?></th>
+            <td><input type="file" name="imglist[]" id="imglist" multiple>
+			<?php $hinhanh=explode("|", $info['hinhanhphu']); 
+	for($j=0;$j<count($hinhanh);$j++)
+	{
+	if($hinhanh[$j]!=null)
+	{
+?>
+<img  src="<?php echo base_url();?>uploads/<?php echo $hinhanh[$j];?>" width="44" height="44"  />
+<?php }else break;}?>
+			</td>
+            <td></td>
+        </tr>
+		
+		<tr>
+            <th valign="top"><?php echo form_label("Các mẫu sản phẩm: ")?></th>
+            <td><input type="file" name="imglistx[]" id="imglistx" multiple>
+			<?php $hinhanhx=explode("|", $info['mau']); 
+	for($k=0;$k<count($hinhanhx);$k++)
+	{
+	if($hinhanhx[$k]!=null)
+	{
+?>
+<img  src="<?php echo base_url();?>uploads/<?php echo $hinhanhx[$k];?>" width="44" height="44"  />
+<?php }else break;}?>
+			</td>
+            <td></td>
+        </tr>
+        
+		<tr>
+            <th valign="top"><?php echo form_label("Các size sản phẩm: ")?></th>
+            <td><?php echo form_input($size); ?></td>
+            <td></td>
+        </tr>
+        
+        <tr>
+            <th valign="top"><?php echo form_label("Trọng lượng: ")?></th>
+            <td><?php echo form_input($trongluong); ?></td>
+            <td></td>
+        </tr>
+		
+		
+		
+        
+        
+        
+    
+    <tr>
+        <th>&nbsp;</th>
+        <td valign="top">
+            
+			<?php echo form_submit($submit)?>
+            <input type="reset" name="reset" value="Hủy">
+        </td>
+        <td></td>
+    </tr>
+    </table>
+    <!-- end id-form  -->
+    </form>
+    
+    </td>
+    <td>
+
+    
+
+</td>
+</tr>
+<tr>
+<td><img src="<?php echo base_url();?>images/shared/blank.gif" width="695" height="1" alt="blank" /></td>
+<td></td>
+</tr>
+</table>
+ 
+<div class="clear"></div>
+ 
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+    <th class="sized bottomleft"></th>
+    <td id="tbl-border-bottom">&nbsp;</td>
+    <th class="sized bottomright"></th>
+</tr>
+</table>
+<div class="clear">&nbsp;</div>
