@@ -57,7 +57,7 @@ $ngaythang= date('d/m/Y');
                         'id'          => 'idsp',
                         'width'          => '10px',
 						'class'        => 'inp-form',
-						'value'        => $info['id'],
+						'value'        => $info['idsp'],
                     );
 
     $tensp = array(

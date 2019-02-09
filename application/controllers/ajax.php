@@ -433,11 +433,13 @@ $_SESSION['phivanchuyen']=0;
 		}
 		
 			 
-		echo number_format($sub,"0",",",".")." đ";
+		
 		
 		
 		?>
-		 
+		  <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">$</span>
+                                    <?php echo number_format($sub,"0",",","."); ?>                                   </span>	
 	
     	<?php
 	}
@@ -447,7 +449,6 @@ $_SESSION['phivanchuyen']=0;
 	
 	$item1 = $_POST['sizechon'];
 	$item2 = $_POST['iddong'];
-	$item3 = $_POST['id'];	
 	
 		//$laysanpham=$this->Mcart->getProductById($item3);
 	
@@ -462,6 +463,32 @@ $_SESSION['phivanchuyen']=0;
             }
 	
 	
+		
+		
+		
+		
+		?>
+		 
+	
+    	<?php
+	}
+	function ajax_level13mau()
+	{
+	
+	$item1 = $_POST['mauchon'];
+	$item2 = $_POST['iddong'];	
+	
+		//$laysanpham=$this->Mcart->getProductById($item3);
+	
+	for ($i = 0; $i <= $this->cart->total_items(); $i++){
+            $item = $this->input->post($i);
+			
+            $data=array(
+		'rowid' => $item2,
+		'options' => array( 'mauchon'=>$item1)
+	);
+            $this->cart->update_options($data);
+            }
 		
 		
 		
@@ -518,8 +545,8 @@ $_SESSION['phivanchuyen']=0;
 
 
 <input type="hidden" name="tongtientam1" value="<?php echo $tongtien;?>" />
+<span class="totalprice1 price-usd"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span><?php echo number_format($tongtien,"0",",",".");?></span></span>
 
-<?php echo number_format($tongtien,"0",",",".");?>
 
 
     	<?php
@@ -599,7 +626,7 @@ $_SESSION['phivanchuyen']=0;
 <div id="txtHint3">
 <div class="col ">
 <label class="field-name">Phường xã <span class="req">*</span>:</label>
-<select class="form-control " id="phuongxa" name="phuongxa" required="required">
+<select class="form-control " id="phuongxa" name="phuongxa" >
 <option value="">- Chọn Phường/Xã -</option>
 
 </select>
@@ -622,7 +649,7 @@ $_SESSION['phivanchuyen']=0;
 
 <div class="col ">
 <label class="field-name">Phường xã <span class="req">*</span>:</label>
-<select class="form-control " id="phuongxa" name="phuongxa" required="required">
+<select class="form-control " id="phuongxa" name="phuongxa">
 <option value="">- Chọn Phường/Xã -</option>
 <?php foreach($phuongxa as $phuongxa1){ ?>
 <option value="<?php echo $phuongxa1['wardid'];?>"><?php echo $phuongxa1['wardtype'];?> <?php echo $phuongxa1['wardname'];?></option>

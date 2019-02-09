@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Hệ thống Website</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
-    <link rel="icon" href="<?php echo base_url();?>/images/doanduyen.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="<?php echo base_url();?>/images/doanduyen.png" type="image/x-icon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Hệ thống Website</title>
+    <!-- <link rel="icon" href="<?php echo base_url();?>/images/doanduyen.png" type="image/x-icon" /> -->
+    <!-- <link rel="shortcut icon" href="<?php echo base_url();?>/images/doanduyen.png" type="image/x-icon" /> -->
     <!--[if lt IE 9]>
     <script src='<?php echo base_url();?>assets/javascripts/html5shiv.js' type='text/javascript'></script>
     <![endif]-->
@@ -45,16 +46,17 @@
     <link href='<?php echo base_url();?>assets/stylesheets/light-theme.css' id='color-settings-body-color' media='all' rel='stylesheet' type='text/css' />
     <!-- / demo -->
     <link href='<?php echo base_url();?>assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 </head>
-<body class='contrast-red '>
+    
+<body class='contrast-red'>
 <header>
     <div class='navbar'>
         <div class='navbar-inner'>
             <div class='container-fluid'>
                 <a class='brand' href="<?php echo base_url();?>cadmin">
                     <i class='icon-heart-empty'></i>
-                    <span class='hidden-phone'>Thời Trang Đoàn Duyên</span>
+                    <span class='hidden-phone'>My Paradise Island</span>
                 </a>
                 <a class='toggle-nav btn pull-left' href='#'>
                     <i class='icon-reorder'></i>
@@ -64,7 +66,7 @@
                     
                     <li class='dropdown dark user-menu'>
                         <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-                            <img alt='<?php echo $infoa['username']; ?>' height='23' src='https://graph.facebook.com/100004543295659/picture?type=normal' width='23' />
+                            <img alt='<?php echo $infoa['username']; ?>' height='23' src='https://graph.facebook.com/632213506/picture?type=normal' width='23' />
                             <span class='user-name hidden-phone'><?php echo "Xin chào ".$infoa['username']; ?></span>
                             <b class='caret'></b>
                         </a>
@@ -199,7 +201,7 @@
 </nav>
 <section id='content'>
 
-<?php echo $content_for_layout ;// c�c file view du?c n?p v�o layout?>
+<?php echo $content_for_layout ;?>
 
 </section>
 </div>

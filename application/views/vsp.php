@@ -112,17 +112,21 @@ function showCategories1($categories, $parent_id = 0, $char = '', $stt = 0)
 											<div class="stickers-container">
 											</div>
 											<div class="catalog-item-thumbnails">
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-1-zoom_l-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-1-zoom_l-300x300.jpg"></div>
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-3-zoom_l-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-3-zoom_l-300x300.jpg"></div>
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-2-zoom_l-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/Mexx-Yellow-Women-Tank-Top-1646-4243862-2-zoom_l-300x300.jpg"></div>
+											<?php $hinhanh=explode("|", $item['hinhanhphu']); 
+	for($i=0;$i<count($hinhanh);$i++)
+	{
+	if($hinhanh[$i]!=null)
+	{
+?>
+												<div style="width: 63px;"><img src="<?php echo base_url();?>uploads/<?php echo $hinhanh[$i];?>"
+													 alt="Item" data-big-image="<?php echo base_url();?>uploads/<?php echo $hinhanh[$i];?>"></div>
+
+													 <?php } else break;}?>
 											</div>
 										</div><!-- /img-container -->
 										<div class="main-data">
 											<div class="main-description">
-												<a href="https://wp-apparel.romza.ru/product/mexx-yellow-women-top/" class="catalog-item-name" title="Mexx Yellow Women Top">
+												<a href="<?php echo base_url();?>sp/<?php echo $item['slug'];?>-<?php echo $item['stt'];?>.html" class="catalog-item-name" title="<?php echo $item['tensp'];?>">
 												<?php echo $item['tensp'];?>
 												</a>
 											</div>
@@ -134,29 +138,15 @@ function showCategories1($categories, $parent_id = 0, $char = '', $stt = 0)
 
 												<div class="yith-wcwl-add-to-wishlist add-to-wishlist-1806">
 													<div class="yith-wcwl-add-button show" style="display:block">
-														<a href="/?add_to_wishlist=1806" rel="nofollow" data-product-id="1806" data-product-type="variable" class="add_to_wishlist product-action-link favorite switchable "
-														 data-toggle="tooltip" title="Add to favorites">
+														<a href="#" rel="nofollow" data-product-id="1806" data-product-type="variable" class="add_to_wishlist product-action-link favorite switchable "
+														 data-toggle="tooltip" title="Add to wishlist">
 														</a> </div>
-
-													<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-														<a href="https://wp-apparel.romza.ru/wishlist/view/" rel="nofollow" class="product-action-link favorite active"
-														 data-toggle="tooltip" title="Browse Wishlist">
-														</a>
-													</div>
-
-													<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-														<a href="https://wp-apparel.romza.ru/wishlist/view/" rel="nofollow" class="product-action-link favorite active"
-														 data-toggle="tooltip" title="Browse Wishlist">
-														</a>
-													</div>
 
 													<div class="yith-wcwl-wishlistaddresponse"></div>
 
-												</div> <span class="product-action-link" data-toggle="tooltip" title="Compare">
-													<a href="/?action=yith-woocompare-add-product&id=1806" class="compare button" data-product_id="1806" rel="nofollow"></a>
-												</span>
-												<span title="Select options" data-toggle="tooltip">
-													<a href="https://wp-apparel.romza.ru/product/mexx-yellow-women-top/" data-quantity="1" data-product_id="1806"
+												</div>
+												<span title="Detail" data-toggle="tooltip">
+													<a href="<?php echo base_url();?>sp/<?php echo $item['slug'];?>-<?php echo $item['stt'];?>.html" data-quantity="1" data-product_id="1806"
 													 data-product_sku="" class="btn-variable product-action-link product_type_variable add_to_cart_button"></a></span>
 											</div><!-- /catalog-item-links -->
 										</div><!-- /full-view -->
@@ -205,43 +195,37 @@ function showCategories1($categories, $parent_id = 0, $char = '', $stt = 0)
 									<div class="catalog-item clearfix">
 
 										<div class="img-container">
-											<a href="https://wp-apparel.romza.ru/product/acid-wash/" title="Acid Wash">
-												<img width="300" height="300" src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-300x300.jpg"
-												 class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="79408_7104072a29ea4c52016006d02a15732f_image1_zoom"
-												 title="79408_7104072a29ea4c52016006d02a15732f_image1_zoom" srcset="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-300x300.jpg 300w, https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-150x150.jpg 150w, https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-180x180.jpg 180w, https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-600x600.jpg 600w"
+											<a href="<?php echo base_url();?>sp/<?php echo $item['slug'];?>-<?php echo $item['stt'];?>.html" title="<?php echo $item['tensp'];?>">
+												<img width="300" height="300"  class="attachment-shop_catalog size-shop_catalog wp-post-image" src="<?php echo base_url();?>uploads/<?php echo $item['hinhanhchinh'];?>" alt="<?php echo $item['tensp'];?>"
+												title="<?php echo $item['tensp'];?>" srcset="<?php echo base_url();?>uploads/<?php echo $item['hinhanhchinh'];?>" alt="<?php echo $item['tensp'];?>"
 												 sizes="(max-width: 300px) 100vw, 300px" /> </a>
 											<div class="stickers-container">
 												<div class="sticker discount">Sale!"</div>
 											</div>
 											<div class="catalog-item-thumbnails">
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_7104072a29ea4c52016006d02a15732f_image1_zoom-300x300.jpg"></div>
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_3b7b8fbf856aa69fc8dd28d9dffbe5c5_image2_zoom-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_3b7b8fbf856aa69fc8dd28d9dffbe5c5_image2_zoom-300x300.jpg"></div>
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_b213518730b6e2ecf0dd0fe496d1d916_image3_zoom-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_b213518730b6e2ecf0dd0fe496d1d916_image3_zoom-300x300.jpg"></div>
-												<div style="width: 63px;"><img src="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_bca69708d9672063f1679a7edbd7a888_image4_zoom-150x150.jpg"
-													 alt="Item" data-big-image="https://wp-apparel.romza.ru/wp-content/uploads/2016/09/79408_bca69708d9672063f1679a7edbd7a888_image4_zoom-300x300.jpg"></div>
+
+											<?php $hinhanh=explode("|", $item['hinhanhphu']); 
+	for($i=0;$i<count($hinhanh);$i++)
+	{
+	if($hinhanh[$i]!=null)
+	{
+?>
+
+												<div style="width: 63px;"><img src="<?php echo base_url();?>uploads/<?php echo $hinhanh[$i];?>"
+													 alt="Item" data-big-image="<?php echo base_url();?>uploads/<?php echo $hinhanh[$i];?>"></div>
+
+													 <?php } else break;}?>
+
 											</div>
 										</div>
 										<div class="main-data">
 											<div class="main-description">
-												<a href="https://wp-apparel.romza.ru/product/acid-wash/" class="catalog-item-name" title="Acid Wash">Acid
-													Wash</a>
-												<div class="short-description">
-													<p>Here&#8217;s how you run the jogger-pant game right.</p>
-												</div>
+												<a href="<?php echo base_url();?>sp/<?php echo $item['slug'];?>-<?php echo $item['stt'];?>.html" class="catalog-item-name" title="<?php echo $item['tensp'];?>">
+												<?php echo $item['tensp'];?>
+												</a>
 											</div>
 
-											<div class="price"><del><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>68.00</span></del>
-												<ins><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>62.00</span>&ndash;<span
-													 class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span>65.00</span></ins></div>
-										</div>
-										<div class="long-description">
-											<p>Here&#8217;s how you run the jogger-pant game right. These denim joggers from STYX &amp; STONES are a
-												modern update for your casual collection. Crafted with an elasticated waist and cuffs, this slim fit design
-												blends modern comfort with the classic denim. A crowd pleaser, this style pick looks best paired with
-												printed T-shirts and lace-up shoes.</p>
+											<div class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">&#36;</span><?php echo number_format($item['giagiam'],"0",",",".");?></span></div>
 										</div>
 										<div class="full-view">
 											<div class="catalog-item-links">
@@ -252,25 +236,12 @@ function showCategories1($categories, $parent_id = 0, $char = '', $stt = 0)
 														 data-toggle="tooltip" title="Add to favorites">
 														</a> </div>
 
-													<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-														<a href="https://wp-apparel.romza.ru/wishlist/view/" rel="nofollow" class="product-action-link favorite active"
-														 data-toggle="tooltip" title="Browse Wishlist">
-														</a>
-													</div>
-
-													<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-														<a href="https://wp-apparel.romza.ru/wishlist/view/" rel="nofollow" class="product-action-link favorite active"
-														 data-toggle="tooltip" title="Browse Wishlist">
-														</a>
-													</div>
 
 													<div class="yith-wcwl-wishlistaddresponse"></div>
 
-												</div> <span class="product-action-link" data-toggle="tooltip" title="Compare">
-													<a href="/?action=yith-woocompare-add-product&id=1943" class="compare button" data-product_id="1943" rel="nofollow"></a>
-												</span>
-												<span title="Select options" data-toggle="tooltip">
-													<a href="https://wp-apparel.romza.ru/product/acid-wash/" data-quantity="1" data-product_id="1943"
+												</div> 
+												<span title="Detail" data-toggle="tooltip">
+													<a href="<?php echo base_url();?>sp/<?php echo $item['slug'];?>-<?php echo $item['stt'];?>.html" data-quantity="1" data-product_id="1943"
 													 data-product_sku="" class="btn-variable product-action-link product_type_variable add_to_cart_button"></a></span>
 											</div>
 										</div>

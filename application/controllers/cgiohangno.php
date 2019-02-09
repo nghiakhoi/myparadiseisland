@@ -54,6 +54,8 @@ if(isMobile()){
 			
 			
 			$thongtindiachi = $this->muser->thongtindiachi($_POST['phuongxa']);
+			echo $_POST['phuongxa'];
+			print_r($thongtindiachi);
 			if($_POST['sonha']=="")
 			{
 				$sonha="Số nhà Không có";
@@ -150,58 +152,7 @@ if(isMobile()){
 			{
 				$stt=$item['id'];
 				$data['info1'] = $this->Mcart->getProductById($stt);
-				if($dem==0)
-				{
-					$data['gram']=$item['trongluong']*$item['qty'];
-					
-					if($item['trongluong']==250&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']=20000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-					if($item['trongluong']==450&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']=30000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-					if($item['trongluong']==600&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']=45000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-					$dem++;
-				}
-				else
-				{
-					$data['gram']+=$item['trongluong']*$item['qty'];
-					if($item['trongluong']==250&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']+=20000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-					if($item['trongluong']==450&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']+=30000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-					if($item['trongluong']==600&&count($this->cart->contents())<=3)
-					{
-						$data['tienship']+=45000*$item['qty'];
-					}
-					else{
-						$data['tienship']=0;
-					}
-				}
+				
 			}
 		
 		$this->my_layout->view("view_cart1",$data);
@@ -266,21 +217,20 @@ if(isMobile()){
 		if($_POST['soluong']>0)
 			{
 				$shop=array(
-				'id'=>$data['stt'],
-				'masp'=>$data['id'],
-				'name'=>$data['tensp'],
-				'slug'=>$data['slug'],
-				'price'=>$data['giagiam'],
-				'hinhanh'=>$data['hinhanhchinh'],
-				
-				'size'=>$data['size'],
-				'options' => array('sizechon'=>$_POST['sizechon']),
-				'trongluong'=>$data['trongluong'],
-				
-				
-				//'vanchuyen'=>$data['vanchuyen'],
-				'qty'=>$_POST['soluong'],
-				'subtong'=>$data['giagiam']*$_POST['soluong'],
+					'id'=>$data['stt'],
+					'masp'=>$data['idsp'],
+					'name'=>$data['tensp'],
+					'slug'=>$data['slug'],
+					'price'=>$data['giagiam'],
+					'hinhanh'=>$data['hinhanhchinh'],
+					'mau'=>$data['mau'],
+					'size'=>$data['size'],
+					'options' => array('mauchon'=>$_POST['mauchon'], 'sizechon'=>$_POST['sizechon']),
+					
+					
+					//'vanchuyen'=>$data['vanchuyen'],
+					'qty'=>$_POST['soluong'],
+					'subtong'=>$data['giagiam']*$_POST['soluong'],
 		);
 		
 		$this->cart->insert($shop);

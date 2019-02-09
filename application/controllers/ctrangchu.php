@@ -30,8 +30,8 @@ class Ctrangchu extends CI_Controller{
         $data['hienthi']=1;
 		//$data['songuoimua']=$this->muser->getsonguoimua();
 		
-		$data['title']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
-		$data['des']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
+		$data['title']="My Paradise Island ";
+		$data['des']="My Paradise Island ";
 		
 		$min = 100;
 		$max = $this->muser->getsanphamnumrows();
@@ -78,8 +78,8 @@ class Ctrangchu extends CI_Controller{
 		//$param              = $this->uri->segment(3);  
         $data['hienthi']=1;
 		
-		$data['title']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
-		$data['des']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
+		$data['title']="My Paradise Island ";
+		$data['des']="My Paradise Island ";
 			//$data['tendanhmuc']=$this->Mtrangchu->layiddmcha($iddm);
             $data['report'] = '<div style="margin-left:30px;font-size:30px">Chưa có sản phẩm nào</div>';
             $this->my_layout->view("reportloi",$data);
@@ -105,8 +105,8 @@ class Ctrangchu extends CI_Controller{
 		//$param              = $this->uri->segment(3);  
         $data['hienthi']=1;
 		
-		$data['title']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
-		$data['des']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
+		$data['title']="My Paradise Island ";
+		$data['des']="My Paradise Island ";
 		
 		$min = 100;
 		$max = $this->muser->getsanphamnewnumrows();
@@ -157,8 +157,8 @@ class Ctrangchu extends CI_Controller{
 		//$param              = $this->uri->segment(3);  
         $data['hienthi']=1;
 		
-		$data['title']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
-		$data['des']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
+		$data['title']="My Paradise Island ";
+		$data['des']="My Paradise Island ";
 		
 		$min = 100;
 		$max = $this->muser->getsanphamhotnumrows();
@@ -209,8 +209,8 @@ class Ctrangchu extends CI_Controller{
 		//$param              = $this->uri->segment(3);  
         $data['hienthi']=1;
 		
-		$data['title']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
-		$data['des']="Thời Trang Đoàn Duyên - Mua sắm thời trang online đẹp giá rẻ ";
+		$data['title']="My Paradise Island ";
+		$data['des']="My Paradise Island ";
 		
 		$min = 100;
 		$max = $this->muser->getsanphambanchaynhatnumrows();
@@ -258,7 +258,7 @@ class Ctrangchu extends CI_Controller{
 		$data['tendanhmuc']=$this->Mtrangchu->layiddmcha($iddm);
 		$data['tendanhmuc1']=$this->Mtrangchu->layiddmcha1($iddm);
 		$data['title']=$data['tendanhmuc']['tendanhmuc'];
-		$data['des']="Thời Trang Đoàn Duyên - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
+		$data['des']="My Paradise Island - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
 
 		
 		function utf8convert($str) { //chuyển chuỗi thành ko dấu
@@ -357,7 +357,7 @@ return $str;
 
 		
 		$data['key']=$data['title'].", ".utf8convert($data['title']);
-        $min = 60;
+        $min = 1;
 		$max = count($mangchinhthuc);
 		$data['num_rows'] = $max;
 		if($max!=0){
@@ -375,15 +375,15 @@ return $str;
             $config['num_link'] = 5;
 			$config['use_page_numbers'] = TRUE;			
             $config['uri_segment'] = 5;
-			$config['cur_tag_open'] = '<li class="active"><a class="a_phantrang phantrang_active active" alt="Trang hiện tại(1)" title="Trang hiện tại(1)">
-										<span class="phantrang_content">';
-			$config['cur_tag_close'] = '</span></a></li>';
-			$config['num_tag_open'] = '<li>';
-			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<span class="page-numbers current">';
+			$config['cur_tag_close'] = '</span>';
+			$config['num_tag_open'] = '';
+			$config['num_tag_close'] = '';
+			$config['anchor_class'] = 'class="page-numbers"';
 			$config['first_link'] = false;
 			$config['last_link'] = false;
-			$config['next_link'] = false;
-			$config['prev_link'] = false;
+			$config['next_link'] = "Next";
+			$config['prev_link'] = "Prev";
             $this->pagination->initialize($config);
             
             $data['link'] = $this->pagination->create_links();
@@ -412,7 +412,7 @@ return $str;
 		$data['hienthi']=3;
 		$data['tendanhmuc']=$this->Mtrangchu->layiddmcon($iddm);
 		$data['title']=$data['tendanhmuc']['tendmcon'];
-		$data['des']="Thời Trang Đoàn Duyên - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
+		$data['des']="My Paradise Island - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
 		
 		function utf8convert($str) { //chuyển chuỗi thành ko dấu
 	if(!$str) return false;
@@ -479,7 +479,7 @@ return $str;
 		$data['hienthi']=3;
 		$data['tendanhmuc']=$this->Mtrangchu->layiddmsubcon($iddm);
 		$data['title']=$data['tendanhmuc']['tendmsubcon'];
-		$data['des']="Thời Trang Đoàn Duyên - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
+		$data['des']="My Paradise Island - ".$data['title']." Mua sắm thời trang online đẹp giá rẻ ";
 		
 		function utf8convert($str) { //chuyển chuỗi thành ko dấu
 	if(!$str) return false;

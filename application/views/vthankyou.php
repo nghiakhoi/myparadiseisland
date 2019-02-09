@@ -22,10 +22,10 @@ window._fbq.push(['track', '6043403024456', {'value':'0.00','currency':'VND'}]);
 <div class="order-bill-2 buyer-info row">
     <div class="col-lg-12 block">
         <div class="order-result">
-            <p class="title-m">đặt hàng thành công</p>
-            <p class="title-m">Cảm ơn đơn đặt hàng của bạn!</p>
-            <p>Thời Trang Đoàn Duyên sẽ liên hệ quý khách trong vòng 24h làm việc</p>
-            <p class="str">Luôn giữ điện thoại bên cạnh bạn nhé!</p>
+            <p class="title-m">Done!</p>
+            <p class="title-m">Thank you. Your order has been received!</p>
+            <p>We'll call you soon!</p>
+            <p class="str"></p>
             <div class="info">
                 <div class="idcode"><strong><a style="color:white;" href="<?php echo base_url();?>">Trở về trang chủ</a></strong></div>
                 

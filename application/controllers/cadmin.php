@@ -516,7 +516,7 @@ return $text;
 		$str=utf8tourl(utf8convert($this->input->post("tensp")));
                 $add = array(
                         
-						"id" => $this->input->post("idsp"),
+						"idsp" => $this->input->post("idsp"),
                         "tensp" => $this->input->post("tensp"),
 						"slug" => $str,
 						
@@ -705,7 +705,7 @@ return $text;
                     $str=utf8tourl(utf8convert($this->input->post("tensp")));
                       $update = array(
                                     
-						"id" => $this->input->post("idsp"),
+						"idsp" => $this->input->post("idsp"),
                         "tensp" => $this->input->post("tensp"),
 						"slug" => $str,
 						

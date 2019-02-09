@@ -1015,6 +1015,7 @@ body {
 .jq-selectbox__dropdown {
   background: #FFF;
   box-shadow: 0 1px 4px rgba(57, 48, 67, 0.28);
+  z-index: 999999;
 }
 
 .jq-selectbox li {

@@ -9603,6 +9603,7 @@ Sliders - Slick carousel
 
 .slick-prev {
   left: -100px;
+  z-index: 9999;
 }
 
 .slick-prev:after {
@@ -17013,7 +17014,7 @@ td.main-data .zoom-controls {
 .thumbnails .slick-slide {
   margin-left: 5px;
   margin-right: 5px;
-  height: 100px;
+  /* height: 100px; */
 }
 
 .thumbnails .slick-slide img {
@@ -18535,3 +18536,38 @@ Pages styling - Site map & 404
 }
 
 /*/Pages styling ==================================================*/
+
+.thumbnails .slick-list .slick-track .slick-current img {
+  opacity: 1;
+  outline: 1px solid #1abc9c;
+  outline-offset: -1px;
+}
+
+.quantity-wrapper .btn-quantity-change1 {
+  vertical-align: middle;
+  display: inline-block;
+  width: 29px;
+  height: 29px;
+  position: relative;
+  text-align: center;
+  background: #5BE2C7;
+  /* &.minus */
+}
+
+.quantity-wrapper .btn-quantity-change1:before, .quantity-wrapper .btn-quantity-change1:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  left: 7px;
+  top: 14px;
+  background: #000;
+}
+
+.quantity-wrapper .btn-quantity-change1.plus:after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.optionrieng {
+  padding-left: 15px;
+}

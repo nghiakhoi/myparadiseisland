@@ -169,9 +169,9 @@
 
 		// form elements styling
 		//BACK_END
-		$('select').not('.slylizer-skip').styler({
-			selectVisibleOptions: 4,
-		});
+		// $('select').not('.slylizer-skip').styler({
+		// 	selectVisibleOptions: 4,
+		// });
 
 		// initializing custom scrollbars
 		$('.jq-selectbox__dropdown ul, .v-scrollbar, \
@@ -434,6 +434,9 @@
 
 		// for these buttons to not reload the page
 		$('.btn-quantity-change').on('click', function(e){
+			e.preventDefault();
+		});
+		$('.btn-quantity-change1').on('click', function(e){
 			e.preventDefault();
 		});
 
