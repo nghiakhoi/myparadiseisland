@@ -1,4 +1,4 @@
-﻿<p style="font-size:20px !important;"></p>
+<p style="font-size:20px !important;"></p>
 
 <div class='container-fluid'>
 <div class='row-fluid' id='content-wrapper'>
